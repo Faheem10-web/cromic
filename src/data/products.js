@@ -1,4 +1,4 @@
-export const products = [
+const rawProducts = [
   {
     id: "1",
     name: "ANIMA X1 001",
@@ -411,3 +411,29 @@ export const products = [
     },
   },
 ];
+
+export const products = rawProducts.map((product) => {
+  let secondaryImage = null;
+  const variants = product.variants || {};
+  const variantKeys = Object.keys(variants);
+  const firstVariantKey = variantKeys[0];
+
+  if (firstVariantKey) {
+    const variant = variants[firstVariantKey];
+    if (variant && Array.isArray(variant.images) && variant.images.length > 0) {
+      // Find an image that's different from the primary image
+      secondaryImage = variant.images.find((img) => img !== product.image) || variant.images[0];
+    }
+  }
+
+  // Custom visual overrides for specific products to ensure ultra-premium aesthetics
+  if (product.id === "1") {
+    secondaryImage = "https://x8.adencys.com/img/products/ANIMA-X1-002/1.2.jpg";
+  }
+
+  return {
+    ...product,
+    secondaryImage: secondaryImage || product.image,
+  };
+});
+

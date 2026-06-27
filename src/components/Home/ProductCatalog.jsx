@@ -94,7 +94,10 @@ function ProductCatalog() {
                 style={{ textDecoration: "none", color: "inherit", display: "block" }}
               >
                 <div className="product-image">
-                  <img src={item.image} alt={item.name} draggable="false" />
+                  <img src={item.image} alt={item.name} className="primary-image" draggable="false" />
+                  {item.secondaryImage && (
+                    <img src={item.secondaryImage} alt={`${item.name} alternate`} className="secondary-image" draggable="false" />
+                  )}
                 </div>
 
                 <div className="product-info">

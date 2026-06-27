@@ -63,7 +63,17 @@ function Product() {
                     <img
                       src={item.image}
                       alt={item.name}
+                      className="primary-image"
+                      draggable="false"
                     />
+                    {item.secondaryImage && (
+                      <img
+                        src={item.secondaryImage}
+                        alt={`${item.name} alternate`}
+                        className="secondary-image"
+                        draggable="false"
+                      />
+                    )}
                   </div>
 
                   <div className="gallery-info">
