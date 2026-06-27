@@ -104,9 +104,8 @@ function Header() {
           {/* MENU */}
 
           <button
-            className={`header-menu-toggle ${
-              isMenuOpen ? "is-active" : ""
-            }`}
+            className={`header-menu-toggle ${isMenuOpen ? "is-active" : ""
+              }`}
             onClick={toggleMenu}
             aria-label="Toggle Menu"
             aria-expanded={isMenuOpen}
@@ -190,9 +189,8 @@ function Header() {
       ========================= */}
 
       <div
-        className={`nav-overlay ${
-          isMenuOpen ? "is-visible" : ""
-        }`}
+        className={`nav-overlay ${isMenuOpen ? "is-visible" : ""
+          }`}
       >
         <div className="nav-overlay-inner">
 
@@ -216,6 +214,10 @@ function Header() {
 
             <Link to="/contact">
               CONTACT
+            </Link>
+
+            <Link to="/login">
+              Login
             </Link>
 
           </div>

@@ -69,32 +69,101 @@ letter-spacing: -1px;
 
 }
 
-@media(max-width:768px){
 
-  .hero-content{
-    padding:0 25px;
-    justify-content:flex-end;
-    padding-bottom:80px;
-  }
 
-  .hero-content h1{
-    font-size:34px;
-    letter-spacing:2px;
-  }
+@media (max-width:768px){
 
-  .hero-content p{
-    font-size:14px;
-    max-width:100%;
-  }
+.hero{
 
-  .hero-buttons{
-    flex-direction:column;
+    position:relative;
+    height:100vh;
+    overflow:hidden;
+
+}
+
+
+.hero::before{
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(0,0,0,.12) 0%,
+        rgba(0,0,0,.22) 22%,
+        rgba(0,0,0,.42) 58%,
+        rgba(0,0,0,.72) 100%
+    );
+
+}
+
+.hero-content{
+
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:70px;
+
     width:100%;
-  }
+    max-width:620px;
 
-  .hero-buttons button{
-    width:100%;
-  }
+    padding:0 50px;
+
+    z-index:2;
+
+}
+
+.hero-content h1{
+
+    font-size:60px;
+
+    line-height:.95;
+
+    letter-spacing:-2px;
+
+    font-weight:300;
+
+    color:#fff;
+
+    margin-bottom:22px;
+
+}
+
+.hero-content p{
+
+    max-width:430px;
+
+    font-size:17px;
+
+    line-height:1.8;
+
+    color:rgba(255,255,255,.92);
+
+    margin:0;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    flex-direction:row;
+
+    gap:16px;
+
+    margin-top:34px;
+
+}
+
+.hero-buttons button{
+
+    width:auto;
+
+    min-width:190px;
+
+    height:56px;
+
+    border-radius:999px;
+
+}
 
 }
 
@@ -112,14 +181,7 @@ letter-spacing: -1px;
 
 }
 
-.hero-video{
 
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position:70% center;
-
-}
 
 .hero::before{
 
@@ -140,33 +202,18 @@ letter-spacing: -1px;
 
 }
 
-.hero-content{
-
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:42px;
-
-    z-index:2;
-
-    width:100%;
-    max-width:none;
-
-    padding:0 26px;
-
-}
 
 .hero-content h1{
 
   
 
-   font-size: 48px;
+   font-size: 40px;
 
     font-family:"Helvetica Neue",Arial,sans-serif;
 
     font-weight:300;
 
-    line-height:.92;
+    line-height:1.2;
 
     letter-spacing:-2px;
 
@@ -210,5 +257,90 @@ letter-spacing: -1px;
     border-radius:999px;
 
 }
+
+}
+
+
+
+
+
+
+
+
+
+
+/* ======================================================
+   320px PREMIUM MOBILE
+====================================================== */
+
+@media (max-width:320px){
+
+.hero{
+
+    height:75vh;
+
+}
+
+.hero-video{
+
+    object-fit:cover;
+    object-position:72% center;
+
+}
+
+.hero::before{
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(0,0,0,.18) 0%,
+        rgba(0,0,0,.28) 25%,
+        rgba(0,0,0,.48) 60%,
+        rgba(0,0,0,.78) 100%
+    );
+
+}
+
+.hero-content{
+
+    position:absolute;
+
+    left:0;
+    right:0;
+    bottom:28px;
+
+    width:100%;
+
+    padding:0 20px;
+
+}
+
+.hero-content h1{
+
+    font-size:27px;
+
+    line-height:1.2;
+
+    letter-spacing:-1.5px;
+
+    font-weight:300;
+
+    margin-bottom:16px;
+
+}
+
+.hero-content p{
+
+    max-width:235px;
+
+    font-size:13px;
+
+    line-height:1.7;
+
+    margin:0;
+
+}
+
+
 
 }

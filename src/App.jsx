@@ -7,6 +7,7 @@ import Contact from "./Pages/Contact";
 import ProductPage from "./Pages/ProductPage";
 import About from "./Pages/About";
 import SmoothScroll from "./SmoothScroll";
+import Login from "./Pages/Login";
 
 
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/product/:id" element={<ProductPage />} />
         <Route path="/contact" element={<Contact />} />
+           <Route path="/login" element={<Login />} />
 
       </Routes>
       <Footer />
