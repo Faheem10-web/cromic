@@ -14,7 +14,7 @@ function Product() {
         );
 
   return (
-    <section className="gallery">
+    <section className="gallery  gtop">
       <div className="container">
 
         {/* FILTER */}
