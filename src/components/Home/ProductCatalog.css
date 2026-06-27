@@ -1,0 +1,331 @@
+
+.catalog {
+  padding-top: 60px;
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin-bottom: 100px;
+}
+
+.catalog *,
+.catalog *::before,
+.catalog *::after {
+  box-sizing: border-box;
+}
+
+
+
+/* ==========================================================================
+   TOP FILTER BAR SECTION
+   ========================================================================== */
+.catalog-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+  gap: 20px;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 16px;
+}
+
+.catalog-filters {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.catalog-filters button {
+  border: none;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: #999;
+  cursor: pointer;
+  padding-bottom: 16px;
+  margin-bottom: -17px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.25s ease;
+}
+
+.catalog-filters button:hover {
+  color: #000;
+}
+
+.catalog-filters button.active {
+  color: #000;
+  border-bottom: 2px solid #000;
+}
+
+.shop-link {
+  text-decoration: none;
+  color: #000;
+  font-size: 16  px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  position: relative;
+  white-space: nowrap;
+  padding-bottom: 4px;
+}
+
+.shop-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: #000;
+}
+
+/* ==========================================================================
+   PRODUCTS DISPLAY ENGINE & INTERACTIVE DRAG SLIDER
+   ========================================================================== */
+.slider-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.products-slider {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 20px;
+  cursor: grab;
+}
+
+.products-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.products-slider.dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+}
+
+/* ==========================================================================
+   PRODUCT CARD COMPONENT (DESKTOP / 4 COLUMNS)
+   ========================================================================== */
+.product-card {
+  flex: 0 0 calc((100% - (24px * 3)) / 4);
+  min-width: calc((100% - (24px * 3)) / 4);
+  position: relative;
+}
+
+.product-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  /* background: #fdfdfd; */
+}
+
+.product-image img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.03);
+}
+
+/* Floating Heart Mechanism */
+.fav-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  padding: 0;
+}
+
+.fav-btn svg {
+  width: 22px;
+  height: 22px;
+  stroke: #fff;
+  filter: drop-shadow(0px 1px 3px rgba(0,0,0,0.3));
+  transition: transform 0.2s ease, stroke 0.2s ease, fill 0.2s ease;
+}
+
+.fav-btn:hover svg {
+  transform: scale(1.1);
+}
+
+.fav-btn.is-fav svg {
+  stroke: #fff;
+  fill: #fff;
+}
+
+/* Typography Details */
+.product-info {
+  margin-top: 16px;
+}
+
+.product-info h4 {
+  margin: 0 0 6px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #000;
+}
+
+.product-info span {
+  font-size: 18px;
+  color: #707070;
+  font-weight: 400;
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT BREAKPOINTS
+   ========================================================================== */
+
+/* LAPTOP / TABLET RESPONSIVE (1024px to 769px) */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 24px;
+  }
+  .product-card {
+    flex: 0 0 calc((100% - 24px) / 2);
+    min-width: calc((100% - 24px) / 2);
+  }
+  .product-image img {
+    height: 440px;
+  }
+}
+
+/* PORTRAIT TABLET RESPONSIVE (768px down to 426px) */
+@media (max-width: 768px) {
+  .catalog {
+    padding-top: 40px;
+  }
+  .catalog-top {
+    margin-bottom: 40px;
+  }
+  .product-image img {
+    height: 400px;
+  }
+}
+
+/* ==========================================================================
+   ULTRA-PREMIUM MOBILE OVERHAUL (425px & Below)
+   Converts UI to a perfectly-balanced 2-Column Product Grid 
+   ========================================================================== */
+@media (max-width: 425px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .catalog {
+    padding-top: 24px;
+  }
+
+  /* Structural Clean up for Header */
+  .catalog-top {
+    border-bottom: none;
+    margin-bottom: 24px;
+    padding-bottom: 0;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .catalog-filters {
+    width: 100%;
+    gap: 20px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+  }
+  
+  .catalog-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .catalog-filters button {
+    margin-bottom: 0;
+    padding-bottom: 6px;
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  .shop-link {
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-left: auto; /* Aligns neatly to the right right side */
+  }
+
+  /* Transformation Engine: Slider turns into perfect Grid Layout */
+  .products-slider {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    column-gap: 12px;
+    row-gap: 24px;
+    overflow-x: visible;
+    padding-bottom: 0;
+  }
+
+  .product-card {
+    width: 100% !important;
+    min-width: 0 !important;
+    flex: none !important;
+  }
+
+  /* Dynamic Aspect-Ratio Matching Images for Grid View */
+  .product-image img {
+    height: 210px !important; 
+    border-radius: 2px;
+  }
+
+  .fav-btn {
+    top: 10px;
+    right: 10px;
+  }
+  
+  .fav-btn svg {
+    width: 18px;
+    height: 18px;
+    stroke: #000; /* Contrast switch match for smaller screens */
+    filter: none;
+  }
+
+  .fav-btn.is-fav svg {
+    stroke: #000;
+    fill: #000;
+  }
+
+  .product-info {
+    margin-top: 10px;
+  }
+
+  .product-info h4 {
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+  }
+
+  .product-info span {
+    font-size: 12px;
+  }
+
+  /* Disable micro-interactions on mobile for a snappier touch profile */
+  .product-card:hover {
+    transform: none;
+  }
+  
+  .product-card:hover .product-image img {
+    transform: none;
+  }
+}

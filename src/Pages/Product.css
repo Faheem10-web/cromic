@@ -1,0 +1,379 @@
+/* .gallery {
+  background: #ffffff;
+  min-height: 100vh;
+
+  margin-top: 150px;
+  margin-bottom: 100px;
+} */
+
+/* =========================
+   FILTER BAR
+========================= */
+
+.gallery-top {
+  display: flex;
+  align-items: center;
+
+  padding-bottom: 14px;
+  margin-bottom: 30px;
+
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.gallery-filter {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+}
+
+.gallery-filter button {
+  position: relative;
+
+  border: none;
+  background: transparent;
+
+  color: #9a9a9a;
+
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  padding: 0 0 14px;
+
+  transition: all 0.3s ease;
+}
+
+.gallery-filter button:hover {
+  color: #111;
+}
+
+.gallery-filter button.active {
+  color: #111;
+}
+
+.gallery-filter button.active::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 42px;
+  height: 1px;
+
+  background: #111;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  column-gap: 18px;
+  row-gap: 70px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.gallery-card {
+  width: 100%;
+  transition: transform 0.4s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-5px);
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.gallery-image {
+  width: 100%;
+  height: 450px;
+
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.gallery-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  display: block;
+
+  transition: transform 1s ease;
+}
+
+.gallery-card:hover .gallery-image img {
+  transform: scale(1.05);
+}
+
+/* =========================
+   INFO
+========================= */
+
+.gallery-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-top: 14px;
+}
+
+.gallery-info h4 {
+  margin: 0;
+
+  color: #111;
+
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.gallery-info span {
+  color: #777;
+
+  font-size: 12px;
+  font-weight: 400;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1024px) {
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-image {
+    height: 420px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+/* =========================
+   768px Tablet
+========================= */
+
+@media (max-width:768px){
+
+.gallery{
+    margin-top:120px;
+    margin-bottom:80px;
+}
+
+.gallery-top{
+    margin-bottom:28px;
+}
+
+.gallery-filter{
+    gap:24px;
+    flex-wrap:wrap;
+}
+
+.gallery-filter button{
+    font-size:11px;
+    letter-spacing:1px;
+}
+
+/* 2 Cards Per Row */
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:20px;
+}
+
+/* Card */
+
+.gallery-card{
+    width:100%;
+}
+
+/* Image */
+
+.gallery-image{
+    height:360px;
+    border-radius:16px;
+    overflow:hidden;
+    background:#f5f5f5;
+}
+
+.gallery-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .5s ease;
+}
+
+/* Info */
+
+.gallery-info{
+    padding-top:12px;
+}
+
+.gallery-info h4{
+    font-size:12px;
+}
+
+.gallery-info span{
+    font-size:12px;
+}
+
+}
+
+/* =========================
+   425px
+========================= */
+
+@media (max-width:424.99px){
+
+.gallery{
+    margin-top:100px;
+    margin-bottom:60px;
+}
+
+/* Filter */
+
+.gallery-top{
+    margin-bottom:24px;
+    padding-bottom:12px;
+    overflow-x:auto;
+    scrollbar-width:none;
+}
+
+.gallery-top::-webkit-scrollbar{
+    display:none;
+}
+
+.gallery-filter{
+    gap:18px;
+    flex-wrap:nowrap;
+    white-space:nowrap;
+}
+
+.gallery-filter button{
+    font-size:10px;
+    letter-spacing:1px;
+    padding-bottom:10px;
+}
+
+/* Grid */
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:14px;
+}
+
+/* Card */
+
+.gallery-card{
+    width:100%;
+}
+
+/* Image */
+
+.gallery-image{
+    height:240px;
+    border-radius:12px;
+    overflow:hidden;
+}
+
+.gallery-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* Info */
+
+.gallery-info{
+    padding-top:10px;
+    gap:8px;
+}
+
+.gallery-info h4{
+    font-size:11px;
+    letter-spacing:.5px;
+}
+
+.gallery-info span{
+    font-size:11px;
+}
+
+}
+
+
+
+
+
+
+
+
+@media (max-width:375px){
+
+.gallery-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
+}
+
+.gallery-image{
+    height:210px;
+}
+
+.gallery-info h4,
+.gallery-info span{
+    font-size:10px;
+}
+
+}
+
+
+
+
+
+
+
+
+@media (max-width:320px){
+
+.gallery-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+}
+
+.gallery-image{
+    height:180px;
+}
+
+.gallery-filter{
+    gap:14px;
+}
+
+.gallery-filter button{
+    font-size:9px;
+}
+
+.gallery-info h4,
+.gallery-info span{
+    font-size:9px;
+}
+
+}

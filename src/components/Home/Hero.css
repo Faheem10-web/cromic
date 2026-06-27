@@ -1,0 +1,214 @@
+
+
+
+.hero{
+  position:relative;
+  height:100vh;
+  overflow:hidden;
+}
+
+
+
+.hero-video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.45);
+  z-index:1;
+}
+
+.hero-content{
+  padding-top:400px;
+  position:relative;
+  z-index:2;
+
+  max-width:550px;
+}
+
+.hero-content h1{
+  font-size:60px;
+  color:#fff;
+  line-height:1.05;
+font-family: "Helvetica Neue", Arial, sans-serif;
+font-weight: 400;
+letter-spacing: -1px;
+  margin-bottom:24px;
+}
+
+.hero-content p{
+  font-size:18px;
+  font-weight:300;
+  line-height:1.8;
+  color:rgba(255,255,255,.9);
+  max-width:420px;
+  margin-bottom:35px;
+}
+
+
+@media(max-width:1024px){
+
+  .hero-content{
+    padding-left:50px;
+  }
+
+  .hero-content h1{
+    font-size:52px;
+  }
+
+  .hero-content p{
+    font-size:16px;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .hero-content{
+    padding:0 25px;
+    justify-content:flex-end;
+    padding-bottom:80px;
+  }
+
+  .hero-content h1{
+    font-size:34px;
+    letter-spacing:2px;
+  }
+
+  .hero-content p{
+    font-size:14px;
+    max-width:100%;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+    width:100%;
+  }
+
+  .hero-buttons button{
+    width:100%;
+  }
+
+}
+
+/* ======================================================
+   425px PREMIUM MOBILE HERO
+====================================================== */
+
+@media (max-width:424.99px){
+
+.hero{
+
+    position:relative;
+    height:80vh;
+    overflow:hidden;
+
+}
+
+.hero-video{
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:70% center;
+
+}
+
+.hero::before{
+
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(0,0,0,.15) 0%,
+        rgba(0,0,0,.25) 20%,
+        rgba(0,0,0,.42) 55%,
+        rgba(0,0,0,.72) 100%
+    );
+
+    z-index:1;
+
+}
+
+.hero-content{
+
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:42px;
+
+    z-index:2;
+
+    width:100%;
+    max-width:none;
+
+    padding:0 26px;
+
+}
+
+.hero-content h1{
+
+  
+
+   font-size: 48px;
+
+    font-family:"Helvetica Neue",Arial,sans-serif;
+
+    font-weight:300;
+
+    line-height:.92;
+
+    letter-spacing:-2px;
+
+    color:#fff;
+
+    text-transform:uppercase;
+
+}
+
+.hero-content p{
+
+    max-width:270px;
+
+    margin:0;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    color:rgba(255,255,255,.92);
+
+    font-weight:300;
+
+}
+
+.hero-buttons{
+
+    margin-top:32px;
+
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+
+}
+
+.hero-buttons button{
+
+    width:100%;
+    height:56px;
+
+    border-radius:999px;
+
+}
+
+}
