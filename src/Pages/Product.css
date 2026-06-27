@@ -1,16 +1,11 @@
-/* .gallery {
-  background: #ffffff;
-  min-height: 100vh;
 
-  margin-top: 150px;
-  margin-bottom: 100px;
-} */
 
 /* =========================
    FILTER BAR
 ========================= */
 
 .gallery-top {
+    padding-top: 50px;
   display: flex;
   align-items: center;
 
