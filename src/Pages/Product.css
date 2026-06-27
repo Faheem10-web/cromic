@@ -12,7 +12,7 @@
   padding-bottom: 10px;
   margin-bottom: 30px;
 
-  border-bottom: 1px solid #e8e8e8;
+  border-bottom: 1px solid var(--borders);
 }
 
 .gallery-filter {
@@ -27,7 +27,7 @@
   border: none;
   background: transparent;
 
-  color: #9a9a9a;
+  color: var(--secondary-text);
 
   font-size: 12px;
   font-weight: 400;
@@ -42,11 +42,11 @@
 }
 
 .gallery-filter button:hover {
-  color: #111;
+  color: var(--primary-text);
 }
 
 .gallery-filter button.active {
-  color: #111;
+  color: var(--primary-text);
 }
 
 .gallery-filter button.active::after {
@@ -59,7 +59,7 @@
   width: 42px;
   height: 1px;
 
-  background: #111;
+  background: var(--primary-text);
 }
 
 /* =========================
@@ -96,7 +96,7 @@
   width: 100%;
   height: 450px;
   overflow: hidden;
-  background: #f5f5f5;
+  background: var(--surface);
 }
 
 .gallery-image img {
@@ -153,7 +153,7 @@
 .gallery-info h4 {
   margin: 0;
 
-  color: #111;
+  color: var(--primary-text);
 
   font-size: 12px;
   font-weight: 500;
@@ -161,7 +161,7 @@
 }
 
 .gallery-info span {
-  color: #777;
+  color: var(--secondary-text);
 
   font-size: 12px;
   font-weight: 400;
@@ -230,7 +230,7 @@
     height:360px;
     border-radius:16px;
     overflow:hidden;
-    background:#f5f5f5;
+    background:var(--surface);
 }
 
 .gallery-image img{

@@ -3,7 +3,8 @@
    ========================================================================== */
 .editorial-showcase {
   position: relative;
-  background: #f5f2ee;
+  background: var(--showcase-bg);
+  --showcase-overlay-gradient: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.08));
 }
 
 .container {
@@ -23,7 +24,7 @@
   font-size: 12px;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: #8d8d8d;
+  color: var(--secondary-text);
   margin-bottom: 24px;
 }
 
@@ -34,7 +35,7 @@
   letter-spacing: -1px;
   text-transform: uppercase;
   font-size: 54px;
-  color: #111;
+  color: var(--primary-text);
   margin-bottom: 30px;
 }
 
@@ -42,7 +43,7 @@
   max-width: 620px;
   font-size: 18px;
   line-height: 1.8;
-  color: #666;
+  color: var(--secondary-text);
 }
 
 /* CARDS WRAPPING & SCROLL MECHANICS */
@@ -67,7 +68,7 @@
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background: #f5f2ee;
+  background: #ffffff;
   overflow: hidden;
   will-change: transform, opacity;
 }
@@ -153,7 +154,7 @@
   width: 320px;
   height: 180px;
   overflow: hidden;
-  background: #fff;
+  background: #ffffff;
 }
 
 .thumb-box img {
@@ -174,7 +175,7 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   border-bottom: 1px solid #111;
-margin-top: -40px;
+  margin-top: -40px;
   transition: opacity 0.3s ease;
 }
 
@@ -214,9 +215,7 @@ margin-top: -40px;
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right,
-      rgba(245, 242, 238, 0) 50%,
-      rgba(245, 242, 238, 0.08));
+  background: var(--showcase-overlay-gradient);
   pointer-events: none;
 }
 
@@ -297,13 +296,13 @@ margin-top: -40px;
 .brand-subtitle{
     font-size:18px;
     font-weight:500;
-    color:#000000;
+    color:#ffffff;
     margin-bottom:14px;
 }
 
 .divider{
     width:42px;
-    background:#000000;
+    background:#ffffff;
     margin-bottom:22px;
 }
 
@@ -319,7 +318,7 @@ margin-top: -40px;
     line-height:.92;
     font-weight:700;
     letter-spacing:1px;
-    color:#000000;
+    color:#ffffff;
 }
 
 .collection-number{
@@ -333,7 +332,7 @@ margin-top: -40px;
     width:92%;
     font-size:14px;
     line-height:1.55;
-    color:rgba(0, 0, 0, 0.92);
+    color:rgba(255, 255, 255, 0.92);
     margin-bottom:auto;
     text-shadow:0 2px 8px rgba(0,0,0,.35);
 }

@@ -26,20 +26,17 @@
 }
 
 .header-main.inner-page {
-  background: #ffffff;
-  /* border-bottom: 1px solid #eeeeee; */
+  background: var(--background);
 }
 
 .header-main.is-scrolled {
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--header-bg);
 
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-/* 
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06); */
+  border-bottom: 1px solid var(--borders);
 
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow);
 }
 
 /* =========================================
@@ -137,13 +134,13 @@
 
 .header-main.is-scrolled .menu-bar,
 .header-main.inner-page .menu-bar {
-  background: #111111;
+  background: var(--primary-text);
 }
 
 /* OPEN MENU = ALWAYS BLACK */
 
 .header-menu-toggle.is-active .menu-bar {
-  background: #111111 !important;
+  background: var(--primary-text) !important;
 }
 
 /* HAMBURGER TO X */
@@ -192,7 +189,7 @@
 
 .header-main.is-scrolled .header-divider,
 .header-main.inner-page .header-divider {
-  background: #dddddd;
+  background: var(--borders);
 }
 
 /* =========================================
@@ -230,19 +227,19 @@
 
 .header-main.is-scrolled .action-btn,
 .header-main.inner-page .action-btn {
-  background: #ffffff;
+  background: var(--cards);
 
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--borders);
 
-  color: #111111;
+  color: var(--primary-text);
 }
 
 .action-btn:hover {
-  background: #111111 !important;
+  background: var(--primary-text) !important;
 
-  border-color: #111111 !important;
+  border-color: var(--primary-text) !important;
 
-  color: #ffffff !important;
+  color: var(--background) !important;
 }
 
 .action-icon {
@@ -273,8 +270,8 @@
   align-items: center;
   justify-content: center;
 
-  background: #111111;
-  color: #ffffff;
+  background: var(--primary-text);
+  color: var(--background);
 
   font-size: 10px;
   font-weight: 600;
@@ -288,7 +285,7 @@
   position: fixed;
   inset: 0;
 
-  background: #ffffff;
+  background: var(--background);
 
   opacity: 0;
   visibility: hidden;
@@ -338,7 +335,7 @@
 
   text-decoration: none;
 
-  color: #111111;
+  color: var(--primary-text);
 font-size: 32px;
 
   font-weight: 300;
@@ -363,7 +360,7 @@ font-size: 32px;
   width: 0;
   height: 1px;
 
-  background: #111111;
+  background: var(--primary-text);
 
   transform: translateX(-50%);
 

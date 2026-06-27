@@ -8,6 +8,7 @@ import ProductPage from "./Pages/ProductPage";
 import About from "./Pages/About";
 import SmoothScroll from "./SmoothScroll";
 import Login from "./Pages/Login";
+import ThemeToggle from "./components/Common/ThemeToggle";
 
 
 
@@ -20,6 +21,7 @@ function App() {
     <>
     <SmoothScroll/>
       <Header />
+      <ThemeToggle />
 
       <Routes>
         <Route path="/" element={<Home />} />

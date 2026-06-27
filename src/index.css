@@ -11,17 +11,98 @@ html{
   scroll-behavior:smooth;
 }
 
-body{
-  font-family:'Inter',sans-serif;
-  background:#ffffff;
-  color:#111827;
-  overflow-x:hidden;
+:root {
+  --background: #FFFFFF;
+  --surface: #F8FAFC;
+  --cards: #FFFFFF;
+  --primary-text: #0F172A;
+  --secondary-text: #64748B;
+  --borders: #E2E8F0;
+  --hover: #F1F5F9;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --header-bg: rgba(255, 255, 255, 0.85);
+  --footer-bg: #000000;
+  
+  /* Custom section theme offsets */
+  --journey-bg: #fff2cc;
+  --showcase-bg: #f5f2ee;
+  --showcase-number-color: #d6d1ca;
+  
+  --theme-transition-duration: 300ms;
+  --theme-transition-ease: ease-in-out;
 }
 
-.container{
-  max-width:2000px !important;
-  margin:auto;
-  padding:0 20px;
+[data-theme='dark'] {
+  --background: #050505;
+  --surface: #050505;
+  --cards: #050505;
+  --primary-text: #F9FAFB;
+  --secondary-text: #CBD5E1;
+  --borders: #262626;
+  --hover: #161616;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --header-bg: rgba(5, 5, 5, 0.85);
+  --footer-bg: #050505;
+  
+  /* Custom section theme offsets */
+  --journey-bg: #050505;
+  --showcase-bg: var(--background);
+  --showcase-number-color: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--background);
+  color: var(--primary-text);
+  overflow-x: hidden;
+}
+
+/* Global Motion System Transition Engine */
+body,
+header,
+footer,
+.journey,
+.philosophy-section,
+.story-section,
+.catalog,
+.editorial-showcase,
+.editorial-card,
+.product-page,
+.gallery,
+.product-gallery,
+.product-info,
+.login,
+.contact-container,
+.action-btn,
+.nav-overlay,
+.gallery-filter button,
+.catalog-filters button,
+.product-card,
+.gallery-card,
+.color-thumb,
+.add-to-cart-btn,
+.submit-btn,
+.login-btn,
+input,
+select,
+textarea,
+h1, h2, h3, h4, h5, h6,
+p,
+span,
+a,
+label {
+  transition: background-color var(--theme-transition-duration) var(--theme-transition-ease),
+              background var(--theme-transition-duration) var(--theme-transition-ease),
+              color var(--theme-transition-duration) var(--theme-transition-ease),
+              border-color var(--theme-transition-duration) var(--theme-transition-ease),
+              box-shadow var(--theme-transition-duration) var(--theme-transition-ease),
+              opacity var(--theme-transition-duration) var(--theme-transition-ease);
+}
+
+.container {
+  max-width: 2000px !important;
+  margin: auto;
+  padding: 0 20px;
 }
 
 

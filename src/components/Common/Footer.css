@@ -1,5 +1,5 @@
 .footer {
-  background: #000;
+  background: var(--footer-bg, #000);
   color: #fff;
   width: 100%;
   overflow: hidden;

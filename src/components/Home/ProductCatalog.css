@@ -24,7 +24,7 @@
   align-items: center;
   margin-bottom: 60px;
   gap: 20px;
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 1px solid var(--borders);
   padding-bottom: 16px;
 }
 
@@ -40,7 +40,7 @@
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 2px;
-  color: #999;
+  color: var(--secondary-text);
   cursor: pointer;
   padding-bottom: 16px;
   margin-bottom: -17px;
@@ -49,18 +49,18 @@
 }
 
 .catalog-filters button:hover {
-  color: #000;
+  color: var(--primary-text);
 }
 
 .catalog-filters button.active {
-  color: #000;
-  border-bottom: 2px solid #000;
+  color: var(--primary-text);
+  border-bottom: 2px solid var(--primary-text);
 }
 
 .shop-link {
   text-decoration: none;
-  color: #000;
-  font-size: 16  px;
+  color: var(--primary-text);
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: 1.5px;
   position: relative;
@@ -75,7 +75,7 @@
   bottom: 0;
   width: 100%;
   height: 1px;
-  background: #000;
+  background: var(--primary-text);
 }
 
 /* ==========================================================================
@@ -204,12 +204,12 @@
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.5px;
-  color: #000;
+  color: var(--primary-text);
 }
 
 .product-info span {
   font-size: 18px;
-  color: #707070;
+  color: var(--secondary-text);
   font-weight: 400;
 }
 
@@ -322,13 +322,13 @@
   .fav-btn svg {
     width: 18px;
     height: 18px;
-    stroke: #000; /* Contrast switch match for smaller screens */
+    stroke: var(--primary-text); /* Contrast switch match for smaller screens */
     filter: none;
   }
 
   .fav-btn.is-fav svg {
-    stroke: #000;
-    fill: #000;
+    stroke: var(--primary-text);
+    fill: var(--primary-text);
   }
 
   .product-info {

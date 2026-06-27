@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Header.css";
+import { useTheme } from "../../context/ThemeContext";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,6 +10,7 @@ function Header() {
 
   const lastScrollY = useRef(0);
   const location = useLocation();
+  const { theme } = useTheme();
 
   const lastPath = useRef(location.pathname);
   if (location.pathname !== lastPath.current) {
@@ -21,7 +23,9 @@ function Header() {
 
   // Logo Change
   const logoSrc =
-    isHomePage && !isScrolled
+    theme === "dark"
+      ? "/assets/white.logo.png"
+      : isHomePage && !isScrolled
       ? "/assets/white.logo.png"
       : "/assets/logo.png";
 

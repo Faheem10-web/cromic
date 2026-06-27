@@ -16,7 +16,7 @@ const categories = [
     title: "HERITAGE",
     subtitle: "Timeless Design",
     desc: "Classic silhouettes inspired by iconic eyewear culture, refined with contemporary craftsmanship.",
-    image: "https://i.pinimg.com/1200x/51/55/70/515570e3d25da043d70cc9b9212091c1.jpg",
+    image: "https://i.pinimg.com/1200x/0b/35/65/0b35653ee75d43b2e7506fddfcb8d6e7.jpg",
     thumb: "https://images.unsplash.com/photo-1577803645773-f96470509666?w=500",
   },
   {

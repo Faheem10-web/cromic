@@ -107,7 +107,7 @@ function ProductPage() {
 
   return (
     <main className="product-page">
-      <section className="gallery">
+      <section className="product-gallery">
         <AnimatePresence mode="wait">
           <motion.div
             key={selectedColor}

@@ -13,8 +13,8 @@ function Hero() {
         className="hero-video"
       >
         {/* <source src="/assets/h4.mkv" type="video/mp4" /> */}
-        <source src="/assets/hero.mp4" type="video/mp4" />
-        {/* <source src="/assets/hero3.mkv" type="video/mp4" /> */}
+        {/* <source src="/assets/hero.mp4" type="video/mp4" /> */}
+        <source src="/assets/hero3.mkv" type="video/mp4" />
       </video>
 
       <div className="hero-content">
