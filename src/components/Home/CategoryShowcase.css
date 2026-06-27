@@ -297,13 +297,13 @@ margin-top: -40px;
 .brand-subtitle{
     font-size:18px;
     font-weight:500;
-    color:#fff;
+    color:#000000;
     margin-bottom:14px;
 }
 
 .divider{
     width:42px;
-    background:#fff;
+    background:#000000;
     margin-bottom:22px;
 }
 
@@ -319,7 +319,7 @@ margin-top: -40px;
     line-height:.92;
     font-weight:700;
     letter-spacing:1px;
-    color:#fff;
+    color:#000000;
 }
 
 .collection-number{
@@ -333,7 +333,7 @@ margin-top: -40px;
     width:92%;
     font-size:14px;
     line-height:1.55;
-    color:rgba(255,255,255,.92);
+    color:rgba(0, 0, 0, 0.92);
     margin-bottom:auto;
     text-shadow:0 2px 8px rgba(0,0,0,.35);
 }
@@ -375,31 +375,7 @@ margin-top: -40px;
 }
 }
 
-/* ===================== 425px ===================== */
 
-/* @media (max-width:425px){
-
-.editorial-left.container{
-    padding:24px;
-}
-
-.editorial-heading h2{
-    font-size:52px;
-}
-
-.collection-number{
-    font-size:46px;
-}
-
-.editorial-desc{
-    font-size:14px;
-}
-
-.thumb-box{
-    width:116px;
-    height:94px;
-}
-} */
 
 /* ===================== 390px ===================== */
 
