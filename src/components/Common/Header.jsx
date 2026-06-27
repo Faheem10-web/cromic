@@ -10,6 +10,12 @@ function Header() {
   const lastScrollY = useRef(0);
   const location = useLocation();
 
+  const lastPath = useRef(location.pathname);
+  if (location.pathname !== lastPath.current) {
+    setIsMenuOpen(false);
+    lastPath.current = location.pathname;
+  }
+
   // Home page check
   const isHomePage = location.pathname === "/";
 
@@ -68,14 +74,6 @@ function Header() {
       document.body.style.overflow = "auto";
     };
   }, [isMenuOpen]);
-
-  /* =========================
-     CLOSE MENU
-  ========================= */
-
-  useEffect(() => {
-    setIsMenuOpen(false);
-  }, [location.pathname]);
 
   return (
     <>

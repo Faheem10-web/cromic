@@ -322,7 +322,7 @@ margin-top: -40px;
     font-size: clamp(14px, 4vw, 16px);
     font-weight: 500;
     margin-bottom: clamp(6px, 2vw, 12px);
-    color: #111;
+    color: #f3f4f6;
   }
 
   .divider {
@@ -330,7 +330,7 @@ margin-top: -40px;
     width: 32px;
     height: 1px;
     margin-bottom: clamp(12px, 3.5vw, 20px);
-    background: #111;
+    background: #ffffff;
   }
 
   .editorial-heading {
@@ -348,7 +348,7 @@ margin-top: -40px;
     letter-spacing: 1px;
     font-weight: 700;
     transform: none !important;
-    /* Prevents overflow clipping from raw motion transforms */
+    color: #ffffff;
   }
 
   .collection-number {
@@ -356,7 +356,7 @@ margin-top: -40px;
     font-size: clamp(28px, 8.5vw, 42px);
     font-weight: 700;
     line-height: 0.9;
-    color: rgba(17, 17, 17, 0.15);
+    color: rgba(255, 255, 255, 0.3);
     /* Integrated contrast into overlay */
   }
 
@@ -364,11 +364,11 @@ margin-top: -40px;
     order: 6;
     font-size: clamp(12px, 3.5vw, 14px);
     line-height: 1.5;
-    color: #222;
+    color: #f3f4f6;
     margin-bottom: auto;
     /* Pushes content down elegantly while allocating space contextually */
     max-width: 100%;
-    text-shadow: 0 0 20px rgba(245, 242, 238, 0.6);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   }
 
   /* Structural adjustment grouping thumbnails & luxury links */
@@ -403,8 +403,8 @@ margin-top: -40px;
     letter-spacing: 2px;
     text-transform: uppercase;
     text-decoration: none;
-    color: #111;
-    border-bottom: 1px solid #111;
+    color: #ffffff !important;
+    border-bottom: 1px solid #ffffff !important;
     padding-bottom: clamp(10px, 3vw, 14px);
     /* Expands touch target naturally */
     box-sizing: border-box;
@@ -433,17 +433,18 @@ margin-top: -40px;
     object-fit: cover;
   }
 
-  /* Dynamic Luxury Scenery Dimmer Gradient Tint Overlay */
   .editorial-card::after {
-    /* background: linear-gradient(
-  to bottom,
-  rgba(248, 250, 252, 0.94) 0%,
-  rgba(248, 250, 252, 0.82) 25%,
-  rgba(248, 250, 252, 0.52) 55%,
-  rgba(248, 250, 252, 0.38) 72%,
-  rgba(248, 250, 252, 0.92) 100%
-); */
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.45) 0%,
+      rgba(0, 0, 0, 0.25) 40%,
+      rgba(0, 0, 0, 0.75) 100%
+    );
     z-index: 1;
+    pointer-events: none;
   }
 }
 

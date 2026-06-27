@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./ProductCatalog.css";
 
 import { products as allProducts } from "../../data/products";
@@ -9,7 +9,6 @@ const products = catalogProductIds.map((id) => allProducts.find((p) => p.id === 
 
 function ProductCatalog() {
   const [filter, setFilter] = useState("All");
-  const [favorites, setFavorites] = useState({});
 
   const sliderRef = useRef(null);
   const isDown = useRef(false);
@@ -20,12 +19,6 @@ function ProductCatalog() {
     filter === "All"
       ? products
       : products.filter((item) => item.category === filter);
-
-  const toggleFavorite = (id, e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setFavorites((prev) => ({ ...prev, [id]: !prev[id] }));
-  };
 
   const handleMouseDown = (e) => {
     if (!sliderRef.current || window.innerWidth <= 425) return;
