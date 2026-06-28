@@ -311,7 +311,12 @@ function Header() {
 
           <div className="desktop-menu-links">
             {["HOME", "SHOP", "PRODUCT", "ABOUT", "CONTACT", "LOGIN"].map((name, i) => {
-              const linkPath = name === "LOGIN" ? "/login" : name === "PRODUCT" ? "/product/1" : name === "SHOP" ? "/shop" : "/";
+              const linkPath =
+                name === "LOGIN" ? "/login" :
+                name === "PRODUCT" ? "/product/1" :
+                name === "SHOP" ? "/shop" :
+                name === "ABOUT" ? "/about" :
+                name === "CONTACT" ? "/contact" : "/";
               return (
                 <Link 
                   key={name}
