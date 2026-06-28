@@ -200,17 +200,19 @@
 }
 
 .product-info h4 {
-  margin: 0 0 6px;
+  margin: 0 0 2px;
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.5px;
   color: var(--primary-text);
+  line-height: 1.2;
 }
 
 .product-info span {
   font-size: 18px;
   color: var(--secondary-text);
   font-weight: 400;
+  line-height: 1.2;
 }
 
 /* ==========================================================================
@@ -340,10 +342,12 @@
     font-weight: 500;
     margin-bottom: 2px;
     text-transform: uppercase;
+    line-height: 1.2;
   }
 
   .product-info span {
     font-size: 12px;
+    line-height: 1.2;
   }
 
   /* Disable micro-interactions on mobile for a snappier touch profile */

@@ -21,7 +21,6 @@ function App() {
     <>
     <SmoothScroll/>
       <Header />
-      <ThemeToggle />
 
       <Routes>
         <Route path="/" element={<Home />} />

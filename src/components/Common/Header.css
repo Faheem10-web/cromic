@@ -278,200 +278,159 @@
 }
 
 /* =========================================
-   OVERLAY
+   CTA BUTTON
 ========================================= */
 
-.nav-overlay {
-  position: fixed;
-  inset: 0;
-
-  background: var(--background);
-
-  opacity: 0;
-  visibility: hidden;
-
-  transition: all 0.4s ease;
-
-  z-index: 9998;
-}
-
-.nav-overlay.is-visible {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* =========================================
-   OVERLAY INNER
-========================================= */
-
-.nav-overlay-inner {
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-  flex-direction: column;
-
-  justify-content: center;
-  align-items: center;
-
-  position: relative;
-}
-
-/* =========================================
-   NAV LINKS
-========================================= */
-
-.nav-links {
-  display: flex;
-  flex-direction: column;
-
-  align-items: center;
-
-  gap: 28px;
-}
-
-.nav-links a {
-  position: relative;
-
-  text-decoration: none;
-
-  color: var(--primary-text);
-font-size: 32px;
-
-  font-weight: 300;
-
-  letter-spacing: 8px;
-
-  line-height: 1;
-
-  text-transform: uppercase;
-
-  transition: all 0.35s ease;
-}
-
-.nav-links a::after {
-  content: "";
-
-  position: absolute;
-
-  left: 50%;
-  bottom: -12px;
-
-  width: 0;
-  height: 1px;
-
-  background: var(--primary-text);
-
-  transform: translateX(-50%);
-
-  transition: 0.35s ease;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-.nav-links a:hover {
-  letter-spacing: 12px;
-
-  transform: translateY(-2px);
-
-  opacity: 1;
-}
-
-/* =========================================
-   FOOTER
-========================================= */
-
-.nav-footer {
-  position: absolute;
-
-  bottom: 60px;
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  text-align: center;
-}
-
-.nav-footer p:first-child {
+.header-cta-btn {
   font-size: 11px;
-
-  letter-spacing: 4px;
-
+  font-weight: 500;
+  letter-spacing: 2px;
   text-transform: uppercase;
-
-  margin-bottom: 10px;
+  padding: 10px 24px;
+  border-radius: 9999px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
 }
 
-.nav-footer p:last-child {
-  font-size: 13px;
+.header-main:not(.is-scrolled):not(.inner-page) .header-cta-btn {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  background: transparent;
+}
 
-  color: #777777;
+.header-main:not(.is-scrolled):not(.inner-page) .header-cta-btn:hover {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.header-main.is-scrolled .header-cta-btn,
+.header-main.inner-page .header-cta-btn {
+  border: 1px solid var(--primary-text);
+  color: var(--primary-text);
+  background: transparent;
+}
+
+.header-main.is-scrolled .header-cta-btn:hover,
+.header-main.inner-page .header-cta-btn:hover {
+  background: var(--primary-text);
+  color: var(--background);
+  border-color: var(--primary-text);
+  transform: translateY(-1px);
+}
+
+.header-cta-btn:active {
+  transform: translateY(0);
+}
+
+/* Keyboard accessibility focus states */
+.action-btn:focus-visible,
+.header-menu-toggle:focus-visible,
+.header-cta-btn:focus-visible {
+  outline: 2px solid var(--primary-text);
+  outline-offset: 4px;
 }
 
 /* =========================================
-   TABLET
+   LAPTOP / DESKTOP Spacing Adjustments
 ========================================= */
 
-@media (max-width: 768px) {
-
+@media (max-width: 1439px) and (min-width: 1024px) {
   .header-container {
-    height: 78px;
-    padding: 0 20px;
+    padding: 0 32px;
   }
-
-  .header-logo img {
-    width: 120px;
+  .header-actions {
+    gap: 12px;
   }
-
-  .action-btn {
-    width: 42px;
-    height: 42px;
-    min-width: 42px;
-  }
-
-  .nav-links a {
-    font-size: 32px;
-    letter-spacing: 4px;
+  .header-cta-btn {
+    padding: 8px 20px;
+    height: 40px;
   }
 }
 
 /* =========================================
-   MOBILE
+   TABLET & MOBILE (Responsive Breakpoints)
 ========================================= */
 
-@media (max-width: 480px) {
-
+@media (max-width: 1023px) {
   .header-container {
-    padding: 0 16px;
+    height: 72px;
+    padding: 0 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  .header-logo img {
-    width: 100px;
+  .header-logo {
+    order: 1;
+  }
+
+  .header-actions {
+    order: 2;
+    gap: 12px;
+  }
+
+  .header-cta-btn {
+    display: none !important;
+  }
+
+  .header-toggle-container {
+    display: none !important;
   }
 
   .header-menu-toggle {
-    width: 28px;
+    position: static !important;
+    transform: none !important;
+    margin-left: 8px;
+    order: 3;
   }
-
+  
+  .header-logo img {
+    width: 130px;
+  }
+  
   .action-btn {
-    width: 38px;
-    height: 38px;
-    min-width: 38px;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
   }
+}
 
-  .action-icon {
-    width: 15px;
-    height: 15px;
+@media (max-width: 767px) {
+  .header-container {
+    height: 64px;
+    padding: 0 20px;
   }
-
-  .nav-links a {
-    font-size: 24px;
-    letter-spacing: 3px;
+  
+  .header-logo img {
+    width: 110px;
   }
+  
+  .header-actions {
+    gap: 8px;
+  }
+  
+  .header-menu-toggle {
+    margin-left: 4px;
+  }
+}
 
-  .nav-footer {
-    bottom: 40px;
+@media (max-width: 375px) {
+  .header-container {
+    padding: 0 16px;
+  }
+  
+  .header-logo img {
+    width: 100px;
+  }
+  
+  .header-actions {
+    gap: 4px;
   }
 }
