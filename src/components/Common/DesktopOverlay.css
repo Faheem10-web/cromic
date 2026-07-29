@@ -1,0 +1,218 @@
+/* =========================================
+   DESKTOP LUXURY NAVIGATION OVERLAY
+========================================= */
+
+@media (min-width: 1024px) {
+  /* Overlay Backdrop Animation Override for Desktop */
+  .nav-overlay {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .desktop-overlay-container {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--background) !important;
+    color: var(--primary-text) !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    z-index: 10005;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.02);
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 250ms ease-in-out,
+                color 250ms ease-in-out;
+    will-change: opacity, transform;
+  }
+
+  .nav-overlay.is-visible .desktop-overlay-container {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+  }
+
+  /* Desktop Header */
+  .desktop-menu-header {
+    height: 80px;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10006;
+    border-bottom: 1px solid var(--borders);
+    transition: border-color 250ms ease-in-out;
+  }
+
+  .desktop-menu-logo img {
+    width: 190px;
+    display: block;
+  }
+
+  /* Centered Close Button */
+  .desktop-menu-close {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: var(--primary-text) !important;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.25s ease, transform 0.25s ease, color 250ms ease-in-out;
+  }
+
+  .desktop-menu-close:hover {
+    background-color: var(--hover);
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+
+  .desktop-menu-close:active {
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+
+  .desktop-menu-close svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Desktop Menu Actions */
+  .desktop-menu-right-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .desktop-menu-action-btn {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid var(--borders);
+    color: var(--primary-text) !important;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease, border-color 250ms ease-in-out, color 250ms ease-in-out;
+  }
+
+  .desktop-menu-action-btn:hover {
+    background-color: var(--primary-text);
+    color: var(--background) !important;
+    border-color: var(--primary-text);
+  }
+
+  .desktop-menu-action-btn svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+  }
+
+  .desktop-menu-cart-count {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-text);
+    color: var(--background);
+    font-size: 10px;
+    font-weight: 600;
+    transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+  }
+
+  /* Navigation Links Centered */
+  .desktop-menu-links {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 0;
+  }
+
+  .desktop-menu-link-item {
+    font-size: 48px;
+    font-weight: 400;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    color: var(--secondary-text) !important;
+    text-decoration: none;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 250ms ease-in-out;
+    display: inline-block;
+    padding: 4px 0;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .nav-overlay.is-visible .desktop-menu-link-item {
+    opacity: 1;
+    transform: translateY(0);
+    /* Stagger entry animation */
+    transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1), color 250ms ease-in-out;
+    transition-delay: calc(var(--item-index) * 60ms + 100ms);
+  }
+
+  .desktop-menu-link-item:hover {
+    color: var(--primary-text) !important;
+    letter-spacing: 16px;
+    transform: translateY(-2px);
+  }
+
+  /* Desktop Menu Footer */
+  .desktop-menu-footer {
+    padding-bottom: 40px;
+    text-align: center;
+  }
+
+  .desktop-menu-footer-title {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--primary-text) !important;
+    margin-bottom: 8px;
+    transition: color 250ms ease-in-out;
+  }
+
+  .desktop-menu-footer-subtitle {
+    font-size: 13px;
+    color: var(--secondary-text) !important;
+    transition: color 250ms ease-in-out;
+  }
+
+  /* Desktop Menu Theme Toggle - Fixed Bottom-Right */
+  .desktop-menu-theme-toggle {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    z-index: 10007;
+  }
+}
+
+@media (max-width: 1023px) {
+  .desktop-overlay-container {
+    display: none !important;
+  }
+}

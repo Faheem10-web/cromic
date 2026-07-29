@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:ital,wght@0,300..800;1,300..800&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html {
+  /* Managed by Lenis Smooth Scroll */
+}
+
+/* Global Lenis Smooth Scroll System */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+:root {
+  --background: #FFFFFF;
+  --surface: #F8FAFC;
+  --cards: #FFFFFF;
+  --primary-text: #0F172A;
+  --secondary-text: #64748B;
+  --borders: #E2E8F0;
+  --hover: #F1F5F9;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --header-bg: rgba(255, 255, 255, 0.85);
+  --footer-bg: #000000;
+  
+  /* Custom section theme offsets */
+  --journey-bg: #FFFFFF;
+  --showcase-bg: #FFFFFF;
+  --showcase-number-color: #E2E8F0;
+  
+  --theme-transition-duration: 300ms;
+  --theme-transition-ease: ease-in-out;
+}
+
+[data-theme='dark'] {
+  --background: #050505;
+  --surface: #050505;
+  --cards: #050505;
+  --primary-text: #F9FAFB;
+  --secondary-text: #CBD5E1;
+  --borders: #262626;
+  --hover: #161616;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --header-bg: rgba(5, 5, 5, 0.85);
+  --footer-bg: #050505;
+  
+  /* Custom section theme offsets */
+  --journey-bg: #050505;
+  --showcase-bg: var(--background);
+  --showcase-number-color: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background: var(--background);
+  color: var(--primary-text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* 60 FPS Hardware Acceleration Helper Classes */
+.gpu-layer {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Eliminate 300ms touch delay on mobile */
+a, button, input, select, textarea, [role="button"] {
+  touch-action: manipulation;
+}
+
+body.no-animations *,
+body.no-animations *::before,
+body.no-animations *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Global Motion System Transition Engine */
+body,
+header,
+footer,
+.journey,
+.philosophy-section,
+.story-section,
+.catalog,
+.editorial-showcase,
+.editorial-card,
+.product-page,
+.gallery,
+.product-gallery,
+.product-info,
+.login,
+.contact-container,
+.action-btn,
+.nav-overlay,
+.gallery-filter button,
+.catalog-filters button,
+.product-card,
+.gallery-card,
+.color-thumb,
+.add-to-cart-btn,
+.submit-btn,
+.login-btn,
+input,
+select,
+textarea,
+h1, h2, h3, h4, h5, h6,
+p,
+span,
+a,
+label {
+  transition: background-color var(--theme-transition-duration) var(--theme-transition-ease),
+              background var(--theme-transition-duration) var(--theme-transition-ease),
+              color var(--theme-transition-duration) var(--theme-transition-ease),
+              border-color var(--theme-transition-duration) var(--theme-transition-ease),
+              box-shadow var(--theme-transition-duration) var(--theme-transition-ease),
+              opacity var(--theme-transition-duration) var(--theme-transition-ease);
+}
+
+.container {
+  max-width: 1600px !important;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 40px !important;
+  padding-right: 40px !important;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+
+/* Common */
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+ul{
+  list-style:none;
+}
+
+/* Hide custom trailing cursor on mobile & tablets (<= 768px) */
+@media (max-width: 768px) {
+  .custom-cursor-dot,
+  .custom-cursor-trail {
+    display: none !important;
+  }
+}
+
+/* Skeleton animation styling */
+.skeleton-card {
+  pointer-events: none;
+}
+
+.skeleton-image {
+  width: 100%;
+  height: 380px;
+  background: var(--borders);
+  animation: pulseCard 1.5s infinite ease-in-out;
+}
+
+.skeleton-info-block {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skeleton-title {
+  width: 50%;
+  height: 14px;
+  background: var(--borders);
+  animation: pulseCard 1.5s infinite ease-in-out;
+  border-radius: 2px;
+}
+
+.skeleton-price {
+  width: 20%;
+  height: 14px;
+  background: var(--borders);
+  animation: pulseCard 1.5s infinite ease-in-out;
+  border-radius: 2px;
+}
+
+.skeleton-line {
+  background: var(--borders);
+  display: block;
+  animation: pulseCard 1.5s infinite ease-in-out;
+  border-radius: 2px;
+}
+
+.skeleton-block {
+  background: var(--borders);
+  animation: pulseCard 1.5s infinite ease-in-out;
+  border-radius: 2px;
+}
+
+@keyframes pulseCard {
+  0% { opacity: 0.6; }
+  50% { opacity: 0.3; }
+  100% { opacity: 0.6; }
+}
+
+@media (max-width: 1024px) {
+  .skeleton-image {
+    height: 340px;
+  }
+}
+
+@media (max-width: 768px) {
+  .skeleton-image {
+    height: 300px;
+  }
+}
+
+@media (max-width: 535px) {
+  .skeleton-image {
+    height: 180px !important;
+  }
+}
+

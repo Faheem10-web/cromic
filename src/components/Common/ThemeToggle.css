@@ -1,0 +1,86 @@
+.theme-toggle-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: var(--hover, rgba(128, 128, 128, 0.1));
+  border: 1px solid var(--borders, rgba(128, 128, 128, 0.2));
+  color: var(--primary-text);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.theme-toggle-btn:hover {
+  background: var(--primary-text);
+  color: var(--background);
+  border-color: var(--primary-text);
+  transform: scale(1.06);
+}
+
+/* Transparent Hero Header State */
+.header-main:not(.is-scrolled):not(.inner-page) .theme-toggle-btn {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+.header-main:not(.is-scrolled):not(.inner-page) .theme-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: #ffffff;
+  color: #ffffff;
+  transform: scale(1.06);
+}
+
+/* Scrolled / Inner Page State */
+.header-main.is-scrolled .theme-toggle-btn,
+.header-main.inner-page .theme-toggle-btn {
+  background: var(--hover, rgba(0, 0, 0, 0.05));
+  border: 1px solid var(--borders, rgba(0, 0, 0, 0.15));
+  color: var(--primary-text);
+}
+
+.header-main.is-scrolled .theme-toggle-btn:hover,
+.header-main.inner-page .theme-toggle-btn:hover {
+  background: var(--primary-text);
+  color: var(--background);
+  border-color: var(--primary-text);
+  transform: scale(1.06);
+}
+
+.theme-toggle-btn:active {
+  transform: scale(0.95);
+}
+
+.theme-toggle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+}
+
+/* Keyboard accessibility focus ring */
+.theme-toggle-btn:focus-visible {
+  outline: 2px solid var(--primary-text);
+  outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+  .theme-toggle-btn {
+    width: 36px;
+    height: 36px;
+  }
+  .theme-toggle-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+}

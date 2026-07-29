@@ -1,0 +1,285 @@
+=== STARTING LIVE PRODUCTION DEPLOYMENT INVESTIGATION ===
+
+--- Fetching Home Page: https://cromic.vercel.app/ ---
+Status: 200
+Headers: {
+  "access-control-allow-origin": "*",
+  "age": "454514",
+  "cache-control": "public, max-age=0, must-revalidate",
+  "content-disposition": "inline",
+  "content-type": "text/html; charset=utf-8",
+  "date": "Wed, 29 Jul 2026 11:47:05 GMT",
+  "etag": "W/\"e14f1445792e963dbf0737aedba8c479\"",
+  "last-modified": "Fri, 24 Jul 2026 05:31:51 GMT",
+  "server": "Vercel",
+  "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+  "x-vercel-cache": "HIT",
+  "x-vercel-id": "bom1::7qt8r-1785325625067-a7455adfb9f4",
+  "transfer-encoding": "chunked"
+}
+Found JavaScript bundles: [ '/assets/index-DVw6bf57.js' ]
+Found Inline Scripts count: 1
+Inline Script #0:
+ (function() {
+        const savedTheme = localStorage.getItem('theme');
+        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme || systemTheme);
+      })();
+
+--- Fetching health: https://cromic.vercel.app/health ---
+Status: 200
+Response: {
+  "status": "healthy",
+  "database": "disconnected",
+  "timestamp": "2026-07-29T11:47:05.388Z"
+}
+
+--- Fetching apiHealth: https://cromic.vercel.app/api/health ---
+Status: 200
+Response: {
+  "status": "healthy",
+  "database": "connected",
+  "timestamp": "2026-07-29T11:47:05.757Z"
+}
+
+--- Fetching Products: https://cromic.vercel.app/api/products ---
+Status: 200
+Response type/length: object / 12
+First Product: {
+  "id": "6a69e70957b778860831f9c0",
+  "name": "CROMIC",
+  "slug": "cromic-12",
+  "description": "THE BRAND'S NAMESAKE SILHOUETTE. DESIGNED FOR EXTRAORDINARY STYLING, BOLD INDEPENDENT ATMOSPHERES.",
+  "short_description": "THE BRAND'S NAMESAKE SILHOUETTE. DESIGNED FOR EXTRAORDINARY STYLING, BOLD INDEPENDENT ATMOSPHERES.",
+  "price": "$245.00",
+  "discount_price": null,
+  "brand": "Cromic",
+  "sku": "SKU-12",
+  "category_id": null,
+  "category": "Luxury",
+  "stock": 50,
+  "status": "published",
+  "featured": true,
+  "new_arrival": true,
+  "bestseller": true,
+  "specifications": "Lens Width 50mm · Bridge 22mm · Temple Length 150mm",
+  "frame_material": "",
+  "lens_technology": "",
+  "warranty": "",
+  "origin": "",
+  "includes": "",
+  "appointment_info": "",
+  "contact_info": "",
+  "tags": "Luxury",
+  "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=1200",
+  "secondaryImage": "https://x8.adencys.com/img/products/ANIMA-X1-002/1.1.jpg",
+  "variants": {
+    "tortoise": {
+      "id": "6a69e70957b778860831f9c1",
+      "code": "X-CROMIC",
+      "name": "CROMIC",
+      "color": "Tortoise",
+      "price": "$245.00",
+      "thumb": "https://x8.adencys.com/img/products/ANIMA-X1-002/1.1.jpg",
+      "images": [
+        "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=1200",
+        "https://x8.adencys.com/img/products/ANIMA-X1-002/1.1.jpg"
+      ],
+      "description": "THE BRAND'S NAMESAKE SILHOUETTE. DESIGNED FOR EXTRAORDINARY STYLING, BOLD INDEPENDENT ATMOSPHERES.",
+      "details": "Signature gold hinges with laser-etched insignia on inner temples.",
+      "size": "Lens Width 50mm · Bridge 22mm · Temple Length 150mm",
+      "shipping": "Free worldwide shipping. Easy returns within 30 days."
+    }
+  }
+}
+Last Product: {
+  "id": "6a69e70857b778860831f9a1",
+  "name": "ANIMA X1 001",
+  "slug": "anima-x1-001-1",
+  "description": "METICULOUSLY CRAFTED TO TURN HEADS, THESE OVERSIZED YET GEOMETRICALLY BALANCED FRAMES WITH UNIQUELY ANGLED TEMPLES WERE CRAFTED WITH YOU IN MIND. ESCAPE FROM THE MUNDANE QUOTIDIAN ROUTINE AND RELEASE THE INNER YOU.",
+  "short_description": "METICULOUSLY CRAFTED TO TURN HEADS, THESE OVERSIZED YET GEOMETRICALLY BALANCED FRAMES WITH UNIQUELY ANGLED TEMPLES WERE CRAFTED WITH YOU IN MIND. ESCAPE FROM THE MUNDANE QUOTIDIAN ROUTINE AND RELEASE THE INNER YOU.",
+  "price": "$245.00",
+  "discount_price": null,
+  "brand": "Cromic",
+  "sku": "SKU-1",
+  "category_id": null,
+  "category": "Square",
+  "stock": 50,
+  "status": "published",
+  "featured": true,
+  "new_arrival": false,
+  "bestseller": false,
+  "specifications": "Lens Width 52mm · Bridge 20mm · Temple Length 145mm",
+  "frame_material": "",
+  "lens_technology": "",
+  "warranty": "",
+  "origin": "",
+  "includes": "",
+  "appointment_info": "",
+  "contact_info": "",
+  "tags": "Square",
+  "image": "https://i.pinimg.com/736x/69/e9/d6/69e9d6174ca43746724d5f8de4d71ce0.jpg",
+  "secondaryImage": "https://x8.adencys.com/img/products/ANIMA-X1-002/1.2.jpg",
+  "variants": {
+    "tortoise": {
+      "id": "6a69e70857b778860831f9a2",
+      "code": "001",
+      "name": "ANIMA X1",
+      "color": "Tortoise",
+      "price": "$245.00",
+      "thumb": "https://i.pinimg.com/webp/1200x/6e/e2/20/6ee2205d8b8c37fff650fcb3b3f1153f.webp",
+      "images": [
+        "https://i.pinimg.com/1200x/29/d6/7a/29d67a1e0dcbffcdb74a6f04664eb538.jpg",
+        "https://x8.adencys.com/img/products/ANIMA-X1-002/1.2.jpg",
+        "https://x8.adencys.com/img/products/ANIMA-X1-002/1.3.jpg",
+        "https://i.pinimg.com/736x/d5/ff/bd/d5ffbdcbe6582ef38dcda0fbaa2a9dab.jpg"
+      ],
+      "description": "METICULOUSLY CRAFTED TO TURN HEADS, THESE OVERSIZED YET GEOMETRICALLY BALANCED FRAMES WITH UNIQUELY ANGLED TEMPLES WERE CRAFTED WITH YOU IN MIND. ESCAPE FROM THE MUNDANE QUOTIDIAN ROUTINE AND RELEASE THE INNER YOU.",
+      "details": "Premium handcrafted acetate frame designed for luxury and comfort.",
+      "size": "Lens Width 52mm · Bridge 20mm · Temple Length 145mm",
+      "shipping": "Free worldwide shipping. Easy returns within 30 days."
+    },
+    "olive": {
+      "id": "6a69e70857b778860831f9a3",
+      "code": "002",
+      "name": "ANIMA X1",
+      "color": "Olive",
+      "price": "$245.00",
+      "thumb": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=300",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0586/8768/4711/files/CGSN_9261_01_50-2.webp?v=1779871360",
+        "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=1200",
+        "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?w=1200",
+        "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=1200"
+      ],
+      "description": "METICULOUSLY CRAFTED TO TURN HEADS, THESE OVERSIZED YET GEOMETRICALLY BALANCED FRAMES WITH UNIQUELY ANGLED TEMPLES WERE CRAFTED WITH YOU IN MIND. ESCAPE FROM THE MUNDANE QUOTIDIAN ROUTINE AND RELEASE THE INNER YOU.",
+      "details": "Elegant olive finish with lightweight construction for everyday wear.",
+      "size": "Lens Width 52mm · Bridge 20mm · Temple Length 145mm",
+      "shipping": "Free worldwide shipping. Easy returns within 30 days."
+    },
+    "red": {
+      "id": "6a69e70857b778860831f9a4",
+      "code": "003",
+      "name": "ANIMA X1",
+      "color": "Ruby Red",
+      "price": "$245.00",
+      "thumb": "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?w=300",
+      "images": [
+        "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?w=1200",
+        "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=1200",
+        "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=1200",
+        "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=1200"
+      ],
+      "description": "METICULOUSLY CRAFTED TO TURN HEADS, THESE OVERSIZED YET GEOMETRICALLY BALANCED FRAMES WITH UNIQUELY ANGLED TEMPLES WERE CRAFTED WITH YOU IN MIND. ESCAPE FROM THE MUNDANE QUOTIDIAN ROUTINE AND RELEASE THE INNER YOU.",
+      "details": "Bold ruby red acetate frame crafted for statement styling.",
+      "size": "Lens Width 52mm · Bridge 20mm · Temple Length 145mm",
+      "shipping": "Free worldwide shipping. Easy returns within 30 days."
+    },
+    "black": {
+      "id": "6a69e70857b778860831f9a5",
+      "code": "004",
+      "name": "ANIMA X1",
+      "color": "Black",
+      "price": "$245.00",
+      "thumb": "/assets/p1.png",
+      "images": [
+        "/assets/p1.png",
+        "/assets/p2.png",
+        "/assets/p3.png"
+      ],
+      "description": "METICULOUSLY CRAFTED TO TURN HEADS, THESE OVERSIZED YET GEOMETRICALLY BALANCED FRAMES WITH UNIQUELY ANGLED TEMPLES WERE CRAFTED WITH YOU IN MIND. ESCAPE FROM THE MUNDANE QUOTIDIAN ROUTINE AND RELEASE THE INNER YOU.",
+      "details": "Classic black luxury frame with premium finishing and durability.",
+      "size": "Lens Width 52mm · Bridge 20mm · Temple Length 145mm",
+      "shipping": "Free worldwide shipping. Easy returns within 30 days."
+    }
+  }
+}
+
+--- Fetching Lookbook: https://cromic.vercel.app/api/lookbook ---
+Status: 200
+Response: [
+  {
+    "_id": "6a5e3e8fa1c05be973fc0f1e",
+    "look_key": "mens",
+    "title": "Men's Opticals",
+    "image_url": "https://i.pinimg.com/1200x/ef/bf/7f/efbf7f3153606dfeb44b5837f937a5fe.jpg",
+    "image_public_id": "",
+    "__v": 0,
+    "createdAt": "2026-07-20T15:28:15.515Z",
+    "updatedAt": "2026-07-24T03:50:52.886Z",
+    "images": [
+      "https://i.pinimg.com/1200x/ef/bf/7f/efbf7f3153606dfeb44b5837f937a5fe.jpg",
+      "https://i.pinimg.com/1200x/b1/48/0b/b1480b502149be9afc8769b976086b24.jpg",
+      "https://i.pinimg.com/736x/16/e3/c8/16e3c803108b8b4f8a29347376d1ff18.jpg",
+      "https://i.pinimg.com/1200x/f2/7a/d0/f27ad0e1535c849592443b189441a239.jpg"
+    ]
+  },
+  {
+    "_id": "6a5e3e8fa1c05be973fc0f1f",
+    "look_key": "womens",
+    "title": "Women's Opticals",
+    "image_url": "https://i.pinimg.com/736x/21/6b/c4/216bc4440041891f2c1829749206590e.jpg",
+    "image_public_id": "",
+    "__v": 0,
+    "createdAt": "2026-07-20T15:28:15.515Z",
+    "updatedAt": "2026-07-24T03:50:52.897Z",
+    "images": [
+      "https://i.pinimg.com/736x/21/6b/c4/216bc4440041891f2c1829749206590e.jpg",
+      "https://i.pinimg.com/1200x/dd/1d/64/dd1d648053c844d679ab23349818f7c6.jpg",
+      "https://i.pinimg.com/1200x/ba/d6/d8/bad6d85eb2ee5bdf24f3dead62767225.jpg"
+    ]
+  }
+]
+
+--- Fetching Settings: https://cromic.vercel.app/api/settings ---
+Status: 200
+Response: {
+  "_id": "6a5e42bf4f528d66394a519a",
+  "__v": 0,
+  "appointment_desc": "Experience our signature in-store styling service with a dedicated client advisor.",
+  "appointment_how": "Call us at +1 (800) 555-CROMIC Monday–Saturday: 9AM–6PM EST, or email concierge@cromic.com",
+  "appointment_title": "Book an Appointment",
+  "contact_email": "concierge@cromic.com",
+  "contact_hours": "Monday – Saturday: 9:00 AM – 6:00 PM EST",
+  "contact_phone": "+1 (800) 555-CROMIC",
+  "contact_response": "We respond within 24 hours.",
+  "createdAt": "2026-07-20T15:46:06.554Z",
+  "enable_contact_form": true,
+  "enable_cursor_effect": true,
+  "enable_image_hover": true,
+  "enable_page_loader": true,
+  "enable_section_animations": true,
+  "enable_smooth_scroll": true,
+  "enable_typing_animation": true,
+  "favicon_public_id": "",
+  "favicon_url": "https://res.cloudinary.com/ddluoarzr/image/upload/v1783854623/cromic/iwjdnycdl4hdj8h0qwt9.png",
+  "footer_connect_title": "CONNECT",
+  "footer_contact_title": "GET IN TOUCH",
+  "footer_content_title": "CONTENT",
+  "footer_copyright": "CROMIC® 2026",
+  "footer_email": "info@cromic.com",
+  "footer_legal_title": "LEGAL",
+  "footer_newsletter_title": "JOIN THE LIST. STAY AHEAD.",
+  "footer_social_instagram": "https://instagram.com",
+  "footer_social_pinterest": "https://pinterest.com",
+  "footer_tagline": "Crafted For Those Who See Differently.",
+  "frame_material": "Premium Cellulose Acetate",
+  "hero_slide_interval": 8,
+  "includes": "Premium leather case, microfiber cloth",
+  "lens_technology": "100% UVA/UVB Protection",
+  "navbar_sticky_mode": true,
+  "origin": "Handcrafted in Italy",
+  "returns_desc": "Returns accepted within 30 days in original packaging with security seals intact.",
+  "returns_title": "Returns",
+  "shipping_express_desc": "Standard (3-5 business days) — Complimentary\nExpress (1-2 business days) — $15.00",
+  "shipping_express_title": "Shipping Options",
+  "shipping_standard_desc": "Free standard shipping on all orders, securely packaged in our signature luxury box.",
+  "shipping_standard_title": "Complimentary Delivery",
+  "show_hero_primary_cta": false,
+  "show_navbar_theme_toggle": true,
+  "show_social_links": true,
+  "theme_mode": "always-dark",
+  "updatedAt": "2026-07-27T02:57:58.782Z",
+  "warranty": "2-Year International Warranty",
+  "navbar_black_background": true
+}

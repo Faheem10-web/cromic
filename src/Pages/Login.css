@@ -1,0 +1,173 @@
+/* ==========================================================================
+   LOGIN PAGE STYLES
+   ========================================================================== */
+
+.login {
+  min-height: 100vh;
+  background: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 140px 30px 90px;
+  box-sizing: border-box;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 440px; /* Centered, elegant, premium narrow card look */
+}
+
+.login h1 {
+  font-family: "Manrope", sans-serif;
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  margin-bottom: 48px;
+  text-align: left;
+}
+
+.login-form {
+  width: 100%;
+}
+
+.field {
+  margin-bottom: 32px;
+}
+
+.field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.field input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--borders);
+  background: transparent;
+  color: var(--primary-text);
+  height: 50px;
+  font-size: 16px;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.field input:focus {
+  border-bottom-color: var(--primary-text);
+}
+
+.password-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.password-row a {
+  text-decoration: none;
+  color: var(--secondary-text);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.password-row a:hover {
+  color: var(--primary-text);
+}
+
+.login-btn {
+  width: 100%;
+  margin-top: 24px;
+  border: none;
+  background: none;
+  border-bottom: 1px solid var(--primary-text);
+  color: var(--primary-text);
+  font-size: 24px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0 0 8px;
+  text-align: left;
+  transition: opacity 0.3s ease;
+}
+
+.login-btn:hover {
+  opacity: 0.75;
+}
+
+.register-link {
+  display: inline-block;
+  margin-top: 32px;
+  text-decoration: none;
+  color: var(--primary-text);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.register-link:hover {
+  opacity: 0.7;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (768px to 320px)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .login {
+    padding: 110px 24px 60px;
+  }
+
+  .login h1 {
+    font-size: 32px;
+    margin-bottom: 36px;
+  }
+
+  .field {
+    margin-bottom: 28px;
+  }
+
+  .field input {
+    height: 46px;
+    font-size: 15px;
+  }
+
+  .login-btn {
+    font-size: 20px;
+  }
+
+  .password-row {
+    flex-direction: row; /* Keep on same line if viewport allows, wrap if very small */
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (max-width: 535px) {
+  .login {
+    padding: 100px 20px 40px;
+  }
+
+  .login h1 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .password-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .register-link {
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 320px) {
+  .login {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

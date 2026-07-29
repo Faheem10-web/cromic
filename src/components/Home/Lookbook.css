@@ -1,0 +1,324 @@
+/* ==========================================================================
+   Desktop Base Layout - Lookbook Section matching Reference Image
+   ========================================================================== */
+.lookbook-section {
+  width: 100%;
+  padding: 80px 0 100px;
+  background: var(--showcase-bg, var(--background));
+  box-sizing: border-box;
+}
+
+.lookbook-container {
+  box-sizing: border-box;
+}
+
+/* Header Section */
+.lookbook-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 16px;
+}
+
+.lookbook-header-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.lookbook-section-label {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--secondary-text, #666666);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.lookbook-section-title {
+  font-family: "Manrope", sans-serif;
+  font-size: 42px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  color: var(--primary-text, #111111);
+  margin: 0;
+  line-height: 1;
+}
+
+/* Navigation Arrow Buttons on Top Right */
+.lookbook-header-arrows {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.arrow-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--borders, #e2e8f0);
+  background: transparent;
+  color: var(--primary-text, #111111);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.arrow-btn.active,
+.arrow-btn.next {
+  background: var(--primary-text, #111111);
+  color: var(--background, #ffffff);
+  border-color: var(--primary-text, #111111);
+}
+
+.arrow-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Section Header Divider Line */
+.lookbook-header-line {
+  width: 100%;
+  height: 1px;
+  background: var(--borders, #e2e8f0);
+  margin-bottom: 36px;
+  opacity: 0.8;
+}
+
+/* Cards Grid Layout */
+.lookbook-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.lookbook-card {
+  position: relative;
+  height: 600px;
+  border-radius: 24px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+.lookbook-slider-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+/* Lookbook Auto-Slider Pagination Dots */
+.lookbook-dots-container {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  padding: 6px 12px;
+  border-radius: 99px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.lookbook-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lookbook-dot.active {
+  width: 20px;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+.lookbook-card:hover {
+  transform: translate3d(0, -4px, 0) scale(1.015);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.lookbook-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lookbook-card:hover img {
+  transform: translate3d(0, 0, 0) scale(1.03);
+}
+
+.lookbook-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.82) 0%,
+    rgba(0, 0, 0, 0.25) 45%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+/* Content inside card */
+.lookbook-content {
+  position: absolute;
+  left: 44px;
+  bottom: 44px;
+  right: 44px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.lookbook-label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.lookbook-content h2 {
+  font-size: 38px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 300;
+  color: #ffffff;
+  margin-bottom: 22px;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.lookbook-shop-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  text-decoration: none !important;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.lookbook-shop-link::after {
+  display: none !important;
+  content: none !important;
+  height: 0 !important;
+  background: none !important;
+}
+
+.lookbook-shop-link:hover {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+/* ===================== TABLET & MOBILE RESPONSIVE ===================== */
+@media (max-width: 1024px) {
+  .lookbook-container {
+    padding: 0 40px;
+  }
+  .lookbook-card {
+    height: 520px;
+  }
+  .lookbook-content h2 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .lookbook-section {
+    padding: 50px 0 60px;
+  }
+
+  .lookbook-container {
+    padding: 0 20px;
+  }
+
+  .lookbook-section-title {
+    font-size: 30px;
+  }
+
+  .lookbook-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .lookbook-card {
+    height: 440px;
+    border-radius: 20px;
+  }
+
+  .lookbook-content {
+    left: 24px;
+    bottom: 28px;
+    right: 24px;
+  }
+
+  .lookbook-content h2 {
+    font-size: 30px;
+    margin-bottom: 18px;
+  }
+
+  .lookbook-shop-link {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 425px) {
+  .lookbook-container {
+    padding: 0 16px;
+  }
+
+  .lookbook-section-title {
+    font-size: 26px;
+  }
+
+  .lookbook-card {
+    height: 400px;
+    border-radius: 18px;
+  }
+
+  .lookbook-content {
+    left: 20px;
+    bottom: 22px;
+    right: 20px;
+  }
+
+  .lookbook-content h2 {
+    font-size: 26px;
+    margin-bottom: 16px;
+  }
+}

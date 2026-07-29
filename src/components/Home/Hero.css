@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Cinzel:wght@400..700&display=swap');
+
+/* ==========================================
+   HERO BASE STYLES (LUXURY MODEL DESIGN)
+========================================== */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 650px;
+  overflow: hidden;
+  background: #000000;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-video,
+.hero-image-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+
+/* Dark Vignette Gradient Overlay */
+.hero-overlay-dark {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.88) 0%,
+    rgba(0, 0, 0, 0.55) 45%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  z-index: 2;
+}
+
+/* Content Inner Wrapper */
+.hero-content-inner {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 80px;
+  padding-right: 80px;
+  max-width: 1600px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.hero-left-content {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.hero-badge {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.hero-line {
+  width: 32px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.6);
+  display: inline-block;
+}
+
+.hero-line.sub-line {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  width: 36px;
+}
+
+.hero-tag-text {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.hero-serif-title {
+  font-family: 'Playfair Display', 'Cinzel', serif;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 2px;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.hero-subtitle-box p {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.5px;
+  margin: 0;
+  white-space: pre-line;
+}
+
+.hero-cta-wrapper {
+  margin-top: 10px;
+}
+
+.hero-explore-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  padding-bottom: 6px;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+.hero-explore-btn:hover {
+  border-color: #ffffff;
+  transform: translateX(4px);
+}
+
+.hero-explore-btn .arrow {
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.hero-explore-btn:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* Bottom Bar: Scroll Left & Features Right */
+.hero-bottom-bar {
+  position: absolute;
+  bottom: 40px;
+  left: 80px;
+  right: 80px;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+@keyframes scrollBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+@keyframes circlePulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 12px 2px rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.75);
+  }
+}
+
+.hero-scroll-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  color: #ffffff;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.hero-scroll-btn:hover {
+  opacity: 1;
+}
+
+.scroll-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s ease;
+  animation: circlePulse 2.5s infinite ease-in-out;
+}
+
+.scroll-circle svg {
+  animation: scrollBounce 1.8s infinite cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+.hero-scroll-btn:hover .scroll-circle {
+  border-color: #ffffff;
+}
+
+.scroll-text {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.hero-features-list {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.feature-divider {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* ==========================================
+   TABLET & MOBILE BREAKPOINTS
+========================================== */
+
+@media (max-width: 1024px) {
+  .hero-content-inner {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .hero-serif-title {
+    font-size: 42px;
+  }
+
+  .hero-bottom-bar {
+    left: 40px;
+    right: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-serif-title {
+    font-size: 34px;
+  }
+
+  .hero-bottom-bar {
+    left: 24px;
+    right: 24px;
+    bottom: 24px;
+  }
+
+  .hero-features-list {
+    display: none;
+  }
+}
+
+@media (max-width: 425px) {
+  .hero-content-inner {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 70px;
+  }
+
+  .hero-left-content {
+    gap: 12px;
+  }
+
+  .hero-badge {
+    gap: 10px;
+  }
+
+  .hero-tag-text {
+    font-size: 10.5px;
+    letter-spacing: 3px;
+  }
+
+  .hero-serif-title {
+    font-size: 32px;
+    line-height: 1.12;
+    letter-spacing: 1px;
+  }
+
+  .hero-line.sub-line {
+    width: 32px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+
+  .hero-subtitle-box p {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .hero-explore-btn {
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    padding-bottom: 4px;
+    margin-top: 4px;
+  }
+
+  .hero-bottom-bar {
+    left: 0;
+    right: 0;
+    bottom: 24px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hero-scroll-btn {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .scroll-circle {
+    width: 36px;
+    height: 36px;
+  }
+
+  .scroll-text {
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-content-inner {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .hero-serif-title {
+    font-size: 27px;
+  }
+
+  .hero-subtitle-box p {
+    font-size: 12.5px;
+  }
+}

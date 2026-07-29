@@ -1,0 +1,106 @@
+.contact-container {
+  background-color: var(--background);
+  color: var(--primary-text);
+  padding-top: 140px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 150px;
+  box-sizing: border-box;
+}
+
+.contact-header h1 {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 28px;
+  flex: 1;
+}
+
+label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+input, select, textarea {
+  border: none;
+  border-bottom: 1px solid var(--borders);
+  padding: 10px 0;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  color: var(--primary-text);
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-bottom-color: var(--primary-text);
+}
+
+.submit-btn {
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--primary-text);
+  color: var(--primary-text);
+  cursor: pointer;
+  padding: 6px 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  align-self: flex-start;
+  transition: opacity 0.3s ease;
+}
+
+.submit-btn:hover {
+  opacity: 0.7;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN (768px to 320px)
+========================================== */
+
+@media (max-width: 768px) {
+  .contact-container {
+    padding-top: 110px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 100px;
+  }
+
+  .contact-header h1 {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .form-group {
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 375px) {
+  .contact-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
