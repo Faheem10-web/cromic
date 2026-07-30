@@ -62,12 +62,17 @@
   padding: 12px 40px;
   background: var(--pp-white);
   box-sizing: border-box;
+  position: relative;
+  z-index: 99;
 }
 
 .pp-breadcrumbs a {
   color: var(--pp-text-muted);
   text-decoration: none;
   transition: color 0.2s;
+  cursor: pointer;
+  position: relative;
+  z-index: 100;
 }
 
 .pp-breadcrumbs a:hover {
