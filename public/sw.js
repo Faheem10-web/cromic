@@ -2,7 +2,12 @@ const CACHE_NAME = "cromic-pwa-v1";
 const STATIC_ASSETS = [
   "/",
   "/manifest.json",
+  "/site.webmanifest",
   "/favicon.ico",
+  "/favicon.svg",
+  "/apple-touch-icon.png",
+  "/android-chrome-192x192.png",
+  "/android-chrome-512x512.png",
   "/icons/android-192.png",
   "/icons/android-512.png",
   "/icons/apple-touch-icon-180.png",
