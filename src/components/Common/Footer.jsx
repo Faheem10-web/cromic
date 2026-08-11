@@ -15,7 +15,7 @@ function Footer() {
 
       <div className="footer-newsletter">
         <div className="footer-logo">
-          <img src="/assets/flogo.png" alt="Cromic Eyewear" />
+          <img src="/assets/cromic.png" alt="Cromic Eyewear" />
         </div>
 
         <p className="footer-subtitle">

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import API from "../../services/api";
 import "./Lookbook.css";
@@ -20,8 +20,12 @@ const defaultWomenImages = [
 ];
 
 function LookbookCard({ item, index }) {
+  const navigate = useNavigate();
   const isMens = item.look_key === "mens" || (item.category && item.category.toLowerCase().includes("men")) || (item.title && item.title.toLowerCase().includes("men"));
   const defaultFallback = isMens ? defaultMenImages : defaultWomenImages;
+
+  // Target navigation route
+  const targetUrl = item.link_url || (isMens ? "/shop?category=mens" : (item.category ? `/shop?category=${encodeURIComponent(item.category)}` : "/shop"));
 
   // Prioritize database config images over local default placeholders
   const images = (Array.isArray(item.images) && item.images.filter(Boolean).length > 0)
@@ -46,6 +50,7 @@ function LookbookCard({ item, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.7, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
+      onClick={() => navigate(targetUrl)}
     >
       <div className="lookbook-slider-wrapper">
         {images.map((img, idx) => (
@@ -73,7 +78,7 @@ function LookbookCard({ item, index }) {
       <div className="lookbook-overlay"></div>
 
       {images.length > 1 && (
-        <div className="lookbook-dots-container">
+        <div className="lookbook-dots-container" onClick={(e) => e.stopPropagation()}>
           {images.map((_, idx) => (
             <button
               key={idx}
@@ -92,10 +97,10 @@ function LookbookCard({ item, index }) {
       <div className="lookbook-content">
         <span className="lookbook-label">LOOKBOOK</span>
         <h2>{item.title}</h2>
-        <Link to="/shop" className="lookbook-shop-link">
+        <div className="lookbook-shop-link">
           <span>Shop Collection</span>
           <HiArrowLongRight size={18} />
-        </Link>
+        </div>
       </div>
     </motion.div>
   );

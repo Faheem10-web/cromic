@@ -92,7 +92,7 @@ export default function InstallPWA() {
         <div className="pwa-ios-overlay" onClick={() => setShowIOSModal(false)}>
           <div className="pwa-ios-modal" onClick={(e) => e.stopPropagation()}>
             <button className="pwa-ios-close" onClick={() => setShowIOSModal(false)}>✕</button>
-            <img src="/assets/white.logo.png" alt="CROMIC" className="pwa-ios-logo" />
+            <img src="/assets/cromic.png" alt="CROMIC" className="pwa-ios-logo" />
             <h3>INSTALL CROMIC APP</h3>
             <p>Install CROMIC on your iOS device for a luxury native app experience.</p>
             <div className="pwa-ios-steps">

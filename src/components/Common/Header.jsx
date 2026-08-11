@@ -170,18 +170,14 @@ function Header() {
   // Home page check
   const isHomePage = location.pathname === "/";
 
-  // Logo Change
-  const logoSrc =
-    theme === "dark"
-      ? "/assets/white.logo.png"
-      : isHomePage && !isScrolled
-      ? "/assets/white.logo.png"
-      : "/assets/logo.png";
+  // Determine if the navbar current background is dark
+  const hasDarkNavbar =
+    theme === "dark" ||
+    settings.navbar_black_background !== false ||
+    (isHomePage && !isScrolled);
 
-  const overlayLogoSrc =
-    theme === "dark"
-      ? "/assets/white.logo.png"
-      : "/assets/logo.png";
+  const logoSrc = hasDarkNavbar ? "/assets/cromic.png" : "/assets/logo.png";
+  const overlayLogoSrc = "/assets/cromic.png";
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);

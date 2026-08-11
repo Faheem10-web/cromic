@@ -279,11 +279,13 @@ function ProductPage() {
         )}
       </AnimatePresence>
 
-      <nav className="pp-breadcrumbs">
+      <nav className="pp-breadcrumbs" aria-label="Breadcrumb navigation">
         <Link to="/">Home</Link>
-        <span>|</span>
-        <Link to="/shop">Sunglasses</Link>
-        <span>|</span>
+        <span className="pp-breadcrumb-separator">|</span>
+        <Link to="/shop">
+          Glasses
+        </Link>
+        <span className="pp-breadcrumb-separator">|</span>
         <span className="pp-breadcrumb-current">{productData.name}</span>
       </nav>
 

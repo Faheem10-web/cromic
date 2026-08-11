@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ShoppingBag, Minus, Plus, Trash2, Lock, ShieldCheck, Truck, ArrowRight, CheckCircle2 } from "lucide-react";
+import { useTheme } from "../context/ThemeContext";
 import "./Cart.css";
 
 function Cart() {
+  const { theme } = useTheme();
+  const logoSrc = theme === "dark" ? "/assets/cromic.png" : "/assets/logo.png";
   const [cartItems, setCartItems] = useState(() => {
     try {
       const stored = localStorage.getItem("cart");
@@ -93,6 +96,7 @@ function Cart() {
       <div className="cart-page-container">
         <div className="cart-wrapper">
           <div className="cart-empty-state">
+            <img src={logoSrc} alt="CROMIC" style={{ height: "36px", width: "auto", marginBottom: "24px", display: "block", margin: "0 auto 24px" }} />
             <CheckCircle2 size={64} className="cart-empty-icon" style={{ color: "#4BB543" }} />
             <h1 className="cart-empty-title">ORDER PLACED SUCCESSFULLY</h1>
             <p className="cart-empty-desc">
@@ -117,6 +121,7 @@ function Cart() {
 
         {cartItems.length === 0 ? (
           <div className="cart-empty-state">
+            <img src={logoSrc} alt="CROMIC" style={{ height: "30px", width: "auto", marginBottom: "20px", display: "block", margin: "0 auto 20px" }} />
             <ShoppingBag size={48} className="cart-empty-icon" />
             <h2 className="cart-empty-title">YOUR BAG IS EMPTY</h2>
             <p className="cart-empty-desc">
@@ -180,7 +185,10 @@ function Cart() {
 
             {/* Order Summary Panel */}
             <aside className="cart-summary-panel">
-              <h3 className="summary-title">ORDER SUMMARY</h3>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "16px", borderBottom: "1px solid var(--borders, rgba(255,255,255,0.1))", paddingBottom: "12px" }}>
+                <h3 className="summary-title" style={{ margin: 0 }}>ORDER SUMMARY</h3>
+                <img src={logoSrc} alt="CROMIC" style={{ height: "20px", width: "auto" }} />
+              </div>
               <div className="summary-rows">
                 <div className="summary-row">
                   <span>Subtotal</span>

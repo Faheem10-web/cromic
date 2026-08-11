@@ -53,40 +53,50 @@
 .pp-breadcrumbs {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 11px;
-  font-weight: 400;
-  color: var(--pp-text-muted);
-  letter-spacing: 0;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--pp-text-muted, #64748b);
+  letter-spacing: 0.01em;
   flex-wrap: wrap;
-  padding: 12px 40px;
-  background: var(--pp-white);
+  padding: 16px 40px;
+  background: transparent !important;
   box-sizing: border-box;
   position: relative;
   z-index: 99;
 }
 
 .pp-breadcrumbs a {
-  color: var(--pp-text-muted);
+  color: var(--pp-text-muted, #64748b);
   text-decoration: none;
-  transition: color 0.2s;
+  transition: color 0.2s ease, opacity 0.2s ease;
   cursor: pointer;
   position: relative;
   z-index: 100;
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  background: transparent !important;
 }
 
 .pp-breadcrumbs a:hover {
-  color: var(--pp-text);
+  color: var(--pp-text, #111111) !important;
+  background: transparent !important;
+  text-decoration: underline;
+  opacity: 1;
 }
 
 .pp-breadcrumbs span {
-  color: var(--pp-text-light);
+  color: var(--pp-text-light, #cbd5e1);
   user-select: none;
 }
 
 .pp-breadcrumb-current {
-  color: var(--pp-text) !important;
-  font-weight: 500;
+  color: var(--pp-text, #111111) !important;
+  font-weight: 600;
+  padding: 4px 0;
 }
 
 

@@ -131,7 +131,7 @@ function PageLoader({ enabled }) {
 
     // Preload hero images & logo
     const logoImg = new Image();
-    logoImg.src = "/assets/white.logo.png";
+    logoImg.src = "/assets/cromic.png";
 
     const heroImg = new Image();
     heroImg.src = "https://i.pinimg.com/1200x/c7/fd/85/c7fd8584952f24e8e93b3ac61ff32de0.jpg";
@@ -197,7 +197,7 @@ function PageLoader({ enabled }) {
     >
       {/* Luxury Centered Logo */}
       <img
-        src="/assets/white.logo.png"
+        src="/assets/cromic.png"
         alt="CROMIC"
         style={{
           width: "200px",
