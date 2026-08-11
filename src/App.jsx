@@ -16,101 +16,109 @@ import Cart from "./Pages/Cart";
 import InstallPWA from "./components/Common/InstallPWA";
 import { useSiteSettings } from "./context/SiteSettingsContext";
 
-// Dynamic custom fluid trailing cursor
+// Dynamic custom fluid trailing cursor with 60/120fps hardware acceleration
 function CustomCursor({ enabled }) {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [trail, setTrail] = useState({ x: 0, y: 0 });
+  const dotRef = useRef(null);
+  const trailRef = useRef(null);
+  const posRef = useRef({ x: -100, y: -100 });
+  const trailPosRef = useRef({ x: -100, y: -100 });
   const [visible, setVisible] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     if (!enabled) return;
 
     const moveCursor = (e) => {
-      setPosition({ x: e.clientX, y: e.clientY });
-      setVisible(true);
+      posRef.current = { x: e.clientX, y: e.clientY };
+      if (!visible) setVisible(true);
     };
 
     const handleMouseLeave = () => setVisible(false);
     const handleMouseEnter = () => setVisible(true);
 
     const handleHoverStart = (e) => {
-      if (e.target.closest("a, button, [role='button'], input, select, textarea")) {
-        setIsHovered(true);
-      } else {
-        setIsHovered(false);
+      const isTarget = !!e.target.closest("a, button, [role='button'], input, select, textarea");
+      if (trailRef.current) {
+        trailRef.current.style.width = isTarget ? "44px" : "28px";
+        trailRef.current.style.height = isTarget ? "44px" : "28px";
       }
     };
 
-    window.addEventListener("mousemove", moveCursor);
-    window.addEventListener("mouseover", handleHoverStart);
+    window.addEventListener("mousemove", moveCursor, { passive: true });
+    window.addEventListener("mouseover", handleHoverStart, { passive: true });
     document.addEventListener("mouseleave", handleMouseLeave);
     document.addEventListener("mouseenter", handleMouseEnter);
 
+    let animFrame;
+    const loop = () => {
+      const targetX = posRef.current.x;
+      const targetY = posRef.current.y;
+
+      const currentTrail = trailPosRef.current;
+      const dx = targetX - currentTrail.x;
+      const dy = targetY - currentTrail.y;
+      
+      currentTrail.x += dx * 0.18;
+      currentTrail.y += dy * 0.18;
+
+      if (dotRef.current) {
+        dotRef.current.style.transform = `translate3d(${targetX}px, ${targetY}px, 0) translate(-50%, -50%)`;
+      }
+      if (trailRef.current) {
+        trailRef.current.style.transform = `translate3d(${currentTrail.x}px, ${currentTrail.y}px, 0) translate(-50%, -50%)`;
+      }
+
+      animFrame = requestAnimationFrame(loop);
+    };
+
+    animFrame = requestAnimationFrame(loop);
+
     return () => {
+      cancelAnimationFrame(animFrame);
       window.removeEventListener("mousemove", moveCursor);
       window.removeEventListener("mouseover", handleHoverStart);
       document.removeEventListener("mouseleave", handleMouseLeave);
       document.removeEventListener("mouseenter", handleMouseEnter);
     };
-  }, [enabled]);
+  }, [enabled, visible]);
 
-  useEffect(() => {
-    if (!enabled || !visible) return;
-
-    let animFrame;
-    const updateTrail = () => {
-      setTrail((prev) => {
-        const dx = position.x - prev.x;
-        const dy = position.y - prev.y;
-        return {
-          x: prev.x + dx * 0.15,
-          y: prev.y + dy * 0.15
-        };
-      });
-      animFrame = requestAnimationFrame(updateTrail);
-    };
-
-    animFrame = requestAnimationFrame(updateTrail);
-    return () => cancelAnimationFrame(animFrame);
-  }, [position, enabled, visible]);
-
-  if (!enabled || !visible) return null;
+  if (!enabled) return null;
 
   return (
     <>
       <div 
+        ref={dotRef}
         className="custom-cursor-dot"
         style={{
           position: "fixed",
-          left: position.x,
-          top: position.y,
+          top: 0,
+          left: 0,
           width: "6px",
           height: "6px",
           backgroundColor: "var(--primary-text)",
           borderRadius: "50%",
           pointerEvents: "none",
-          transform: "translate(-50%, -50%)",
           zIndex: 99999,
-          mixBlendMode: "difference"
+          mixBlendMode: "difference",
+          opacity: visible ? 1 : 0,
+          transition: "opacity 0.2s ease"
         }}
       />
       <div 
+        ref={trailRef}
         className="custom-cursor-trail"
         style={{
           position: "fixed",
-          left: trail.x,
-          top: trail.y,
-          width: isHovered ? "44px" : "28px",
-          height: isHovered ? "44px" : "28px",
+          top: 0,
+          left: 0,
+          width: "28px",
+          height: "28px",
           border: "1px solid var(--primary-text)",
           borderRadius: "50%",
           pointerEvents: "none",
-          transform: "translate(-50%, -50%)",
           zIndex: 99998,
-          transition: "width 0.2s ease, height 0.2s ease",
+          transition: "width 0.25s cubic-bezier(0.16, 1, 0.3, 1), height 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease",
           mixBlendMode: "difference",
-          opacity: 0.7
+          opacity: visible ? 0.7 : 0
         }}
       />
     </>

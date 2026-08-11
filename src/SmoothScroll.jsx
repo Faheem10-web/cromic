@@ -16,15 +16,15 @@ export default function SmoothScroll() {
     // Register ScrollTrigger plugin
     gsap.registerPlugin(ScrollTrigger);
 
-    // Initialize global Lenis instance
+    // Initialize global Lenis instance with ultra-luxury inertia scroll physics
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.4,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      wheelMultiplier: 1.0,
-      touchMultiplier: 1.5,
+      wheelMultiplier: 0.9,
+      touchMultiplier: 1.8,
       // On mobile touch devices, allow responsive native touch feedback
       smoothTouch: false,
       autoRaf: false, // Driven explicitly via GSAP ticker loop

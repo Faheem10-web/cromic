@@ -48,8 +48,9 @@ html.lenis, html.lenis body {
   --showcase-bg: #FFFFFF;
   --showcase-number-color: #E2E8F0;
   
-  --theme-transition-duration: 300ms;
-  --theme-transition-ease: ease-in-out;
+  --theme-transition-duration: 350ms;
+  --theme-transition-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --smooth-easing: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 [data-theme='dark'] {
