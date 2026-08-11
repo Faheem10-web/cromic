@@ -43,8 +43,13 @@
   box-shadow: none !important;
 }
 
-/* Force Black Navbar Setting Override (Always Black in Light & Dark Mode) */
-.header-main.force-black-navbar,
+/* Force Black Navbar Setting Override (Black on scroll & inner pages, transparent over hero) */
+.header-main.force-black-navbar {
+  background: transparent;
+  border-bottom: none;
+  box-shadow: none !important;
+}
+
 .header-main.force-black-navbar.is-scrolled,
 .header-main.force-black-navbar.inner-page {
   background: #000000 !important;
@@ -52,44 +57,37 @@
   box-shadow: none !important;
 }
 
-.header-main.force-black-navbar.is-scrolled .menu-bar,
-.header-main.force-black-navbar.inner-page .menu-bar {
+.header-main.force-black-navbar .menu-bar {
   background: #ffffff !important;
 }
 
-.header-main.force-black-navbar.is-scrolled .header-divider,
-.header-main.force-black-navbar.inner-page .header-divider {
+.header-main.force-black-navbar .header-divider {
   background: rgba(255, 255, 255, 0.2) !important;
 }
 
-.header-main.force-black-navbar.is-scrolled .action-btn,
-.header-main.force-black-navbar.inner-page .action-btn {
+.header-main.force-black-navbar .action-btn {
   background: rgba(255, 255, 255, 0.08) !important;
   border-color: rgba(255, 255, 255, 0.2) !important;
   color: #ffffff !important;
 }
 
-.header-main.force-black-navbar.is-scrolled .action-btn:hover,
-.header-main.force-black-navbar.inner-page .action-btn:hover {
+.header-main.force-black-navbar .action-btn:hover {
   background: #ffffff !important;
   color: #000000 !important;
 }
 
-.header-main.force-black-navbar.is-scrolled .cart-count,
-.header-main.force-black-navbar.inner-page .cart-count {
+.header-main.force-black-navbar .cart-count {
   background: #ffffff !important;
   color: #000000 !important;
 }
 
-.header-main.force-black-navbar.is-scrolled .header-cta-btn,
-.header-main.force-black-navbar.inner-page .header-cta-btn {
+.header-main.force-black-navbar .header-cta-btn {
   background: rgba(255, 255, 255, 0.12) !important;
   border: 1px solid rgba(255, 255, 255, 0.4) !important;
   color: #ffffff !important;
 }
 
-.header-main.force-black-navbar.is-scrolled .header-cta-btn:hover,
-.header-main.force-black-navbar.inner-page .header-cta-btn:hover {
+.header-main.force-black-navbar .header-cta-btn:hover {
   background: #ffffff !important;
   color: #000000 !important;
   border-color: #ffffff !important;
